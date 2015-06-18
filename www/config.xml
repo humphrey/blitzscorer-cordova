@@ -9,7 +9,7 @@
     <name>Blitz Scorer</name>
 
     <description>
-        Simple app to keep track of your own Dutch Blitz Score.
+        Simple app to keep track of your own Dutch Blitz Score. 222
     </description>
 
     <author href="http://blitzscorer.com" email="hmurray@datalive.com.au">
@@ -29,7 +29,7 @@
     <!-- Customize your app and platform with the preference element. -->
     <preference name="orientation"                value="default" />        <!-- all: default means both landscape and portrait are enabled -->
     <preference name="target-device"              value="universal" />      <!-- all: possible values handset, tablet, or universal -->
-    <preference name="fullscreen"                 value="true" />           <!-- all: hides the status bar at the top of the screen -->
+    <preference name="fullscreen"                 value="false" />           <!-- all: hides the status bar at the top of the screen -->
     <preference name="webviewbounce"              value="true" />           <!-- ios: control whether the screen 'bounces' when scrolled beyond the top -->
     <preference name="prerendered-icon"           value="true" />           <!-- ios: if icon is prerendered, iOS will not apply it's gloss to the app's icon on the user's home screen -->
     <preference name="stay-in-webview"            value="false" />          <!-- ios: external links should open in the default browser, 'true' would use the webview the app lives in -->
@@ -80,6 +80,8 @@
     <icon src="www/res/icon/android/icon-48-mdpi.png"   gap:platform="android"    gap:qualifier="mdpi" />
     <icon src="www/res/icon/android/icon-72-hdpi.png"   gap:platform="android"    gap:qualifier="hdpi" />
     <icon src="www/res/icon/android/icon-96-xhdpi.png"  gap:platform="android"    gap:qualifier="xhdpi" />
+    <icon src="www/res/icon/android/icon-144-xxhdpi.png" gap:platform="android" gap:qualifier="xxhdpi"/>
+    <icon src="www/res/icon/android/icon-192-xxxhdpi.png" gap:platform="android" gap:qualifier="xxxhdpi"/>
     <icon src="www/res/icon/blackberry/icon-80.png"     gap:platform="blackberry" />
     <icon src="www/res/icon/blackberry/icon-80.png"     gap:platform="blackberry" gap:state="hover"/>
     <icon src="www/res/icon/ios/icon-57.png"            gap:platform="ios"        width="57" height="57" />
@@ -123,9 +125,9 @@
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
     <allow-intent href="tel:*" />
-    <allow-intent href="sms:*" />
+<!--    <allow-intent href="sms:*" />-->
     <allow-intent href="mailto:*" />
-    <allow-intent href="geo:*" />
+<!--    <allow-intent href="geo:*" />-->
     <platform name="android">
         <allow-intent href="market:*" />
     </platform>
