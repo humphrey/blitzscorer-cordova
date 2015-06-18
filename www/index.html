@@ -43,25 +43,48 @@
         <div class="col-md-3"></div>
         <div class="col-md-6">
 
-            <div class="panel panel-default">
+            <!--<div class="panel panel-default">-->
                 <!-- Default panel contents -->
                 <!--<div class="panel-heading">Your score</div>-->
 
                 <!-- Table -->
-                <table class="table table-striped">
+                <table class="table table-bordered" id="scoresheet">
                     <thead>
-                    <tr>
-                        <th>Round</th>
-                        <th>Score</th>
-                        <th>Total</th>
-                        <th style="width: 24px;"></th>
-                    </tr>
+                        <tr id="players">
+                            <th><div><span>Round</span></div></th>
+                            <th class="player"><div><span>Player 1</span></div></th>
+                            <th class="player"><div><span>Player 2</span></div></th>
+                            <th class="player"><div><span>Player 3</span></div></th>
+                            <th class="player"><div><span>Player 4</span></div></th>
+                            <th class="player"><div><span>Player 5</span></div></th>
+                            <th class="player"><div><span>Player 6</span></div></th>
+                            <th class="player"><div><span>Player 7</span></div></th>
+                            <th class="player"><div><span>Player 8</span></div></th>
+                            <th style="width: 24px;" class="action-col">
+                                <!--<button data-action="add-player" data-value="1" class="btn btn-default btn-xs">-->
+                                    <!--<span class="glyphicon glyphicon-plus"></span> Player-->
+                                <!--</button>-->
+                            </th>
+                        </tr>
                     </thead>
-                    <tbody id="rounds">
-                    </tbody>
+                    <tbody id="rounds"></tbody>
+                    <tfoot>
+                        <tr class="info">
+                            <th></th>
+                            <th class="total">0</th>
+                            <th class="total">0</th>
+                            <th class="total">0</th>
+                            <th class="total">0</th>
+                            <th class="total">0</th>
+                            <th class="total">0</th>
+                            <th class="total">0</th>
+                            <th class="total">0</th>
+                            <th></th>
+                        </tr>
+                    </tfoot>
                 </table>
                 <!--<div class="panel-footer"></div>-->
-            </div>
+            <!--</div>-->
 
             <div style="text-align: left;">
                 <div class="btn-group pull-left">

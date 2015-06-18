@@ -30,6 +30,30 @@ var blitzscorer = function () {
 
     });
 
+    $('button[data-action="add-player"]').click(function() {
+
+        addPlayer();
+        return false;
+
+    });
+
+    function addPlayer() {
+
+        var count = getPlayerCount();
+        console.log($('#rounds thead .action-col'))
+
+        var $t = $('<div>').html('<span class="player-name">Player&nbsp;' + (count + 1) + '</span>');
+        $('<th class="player">').html($t).insertBefore("#players .action-col");
+
+        $("#rounds tr").each(function() {
+            $('<td class="score">0</td>').insertBefore($(this).find('td.delete'));
+        });
+    }
+
+    function getPlayerCount() {
+        return $("#players .player").length;
+    }
+
     $('#rounds').on('click', 'button[data-action="delete-round"]', function() {
 
         var $this = $(this);
@@ -89,8 +113,11 @@ var blitzscorer = function () {
         var $tr = $('<tr>').addClass('warning');
 
         $tr.append( $('<td class="round"></td>').text(i) );
-        $tr.append( $('<td class="score">0</td>') );
-        $tr.append( $('<td class="total"></td>') );
+        for( var p=0 ; p < 8 ; p++) {
+            $tr.append('<td class="score">0</td>');
+        }
+        //$tr.append( $('<td class="score">0</td>') );
+        //$tr.append( $('<td class="total"></td>') );
         $tr.append( $('<td class="delete"><button data-action="delete-round" class="btn btn-xs btn-default"><span class="glyphicon glyphicon-trash"></span></button></td>') );
 
         $("#rounds").append($tr);
