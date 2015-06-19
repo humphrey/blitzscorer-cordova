@@ -175,12 +175,13 @@ var blitzscorer = function () {
             $("#rounds").html(rows);
         }
 
-        updateTotals();
-
         var playerCount = localStorage.getItem("playercount");
         $('a[data-action="change-player-count"][data-value="' + playerCount + '"]').click();
 
+        updateTotals();
+
         $('#rounds td.score.selected').click();
+
     }
 
 
