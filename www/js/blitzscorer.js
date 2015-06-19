@@ -1,6 +1,5 @@
 var blitzscorer = function () {
 
-    load();
 
     $('button[data-action="next-round"]').click(function() {
 
@@ -11,11 +10,11 @@ var blitzscorer = function () {
 
     $('button[data-action="change-score"]').click(function() {
 
-        var $tr = $("#rounds tr.warning").last();
-        if ($tr.length > 0) {
-            var oldVal = parseInt($tr.find('.score').text());
+        var $td = $("#rounds td.selected").first();
+        if ($td.length > 0) {
+            var oldVal = parseInt($td.text());
             var newVal = oldVal + parseInt($(this).data('value'));
-            $tr.find('.score').text(newVal);
+            $td.text(newVal);
         }
         updateTotals();
         return false;
@@ -30,28 +29,38 @@ var blitzscorer = function () {
 
     });
 
-    $('button[data-action="add-player"]').click(function() {
+    $('a[data-action="change-player-count"]').click(function() {
 
-        addPlayer();
+        $('#playercount li').removeClass('active');
+        $(this).parents('li').addClass('active').parents('.btn-group').removeClass('open');
+        updateTotals();
+        save();
         return false;
 
     });
 
-    function addPlayer() {
+    //$('button[data-action="add-player"]').click(function() {
+    //
+    //    addPlayer();
+    //    return false;
+    //
+    //});
 
-        var count = getPlayerCount();
-        console.log($('#rounds thead .action-col'))
-
-        var $t = $('<div>').html('<span class="player-name">Player&nbsp;' + (count + 1) + '</span>');
-        $('<th class="player">').html($t).insertBefore("#players .action-col");
-
-        $("#rounds tr").each(function() {
-            $('<td class="score">0</td>').insertBefore($(this).find('td.delete'));
-        });
-    }
+    //function addPlayer() {
+    //
+    //    var count = getPlayerCount();
+    //    console.log($('#rounds thead .action-col'))
+    //
+    //    var $t = $('<div>').html('<span class="player-name">Player&nbsp;' + (count + 1) + '</span>');
+    //    $('<th class="player">').html($t).insertBefore("#players .action-col");
+    //
+    //    $("#rounds tr").each(function() {
+    //        $('<td class="score">0</td>').insertBefore($(this).find('td.delete'));
+    //    });
+    //}
 
     function getPlayerCount() {
-        return $("#players .player").length;
+        return $("#players .active").index() + 1;
     }
 
     $('#rounds').on('click', 'button[data-action="delete-round"]', function() {
@@ -134,17 +143,40 @@ var blitzscorer = function () {
 
     function updateTotals() {
 
-        var runningTotal = 0;
-        var i = 0;
-        $("#rounds tr").each(function() {
-            i += 1;
-            var $tr = $(this),
-                score = parseInt($tr.find('.score').text());
-            runningTotal += score;
-            $tr.find('.total').text(runningTotal);
-            $tr.find('.round').text(i);
+        var playerCount = getPlayerCount();
 
-        });
+        for( var p=2 ; p < 10 ; p++) {
+            //console.log(p);
+            var $scores = $("#rounds tr td.score:nth-child(" + p + ")");
+            var runningTotal = 0;
+            $scores.each(function() {
+                //console.log($(this), $(this).text());
+                runningTotal += parseInt($(this).text());
+            });
+            $('#totals .total:nth-child(' + p + ')').text(runningTotal);
+            //console.log(runningTotal);
+
+            //$("#scoresheet tr").find('th,td').eq(p - 1).toggleClass('hide', p - 1 > playerCount);
+            var col = p - 0;
+            $("#scoresheet tr td:nth-child(" + col + ")").toggleClass('hide', col - 1 > playerCount);
+            $("#scoresheet tr th:nth-child(" + col + ")").toggleClass('hide', col - 1 > playerCount);
+
+        }
+
+
+
+
+        //var runningTotal = 0;
+        //var i = 0;
+        //$("#rounds tr").each(function() {
+        //    i += 1;
+        //    var $tr = $(this),
+        //        score = parseInt($tr.find('.score').text());
+        //    runningTotal += score;
+        //    $tr.find('.total').text(runningTotal);
+        //    $tr.find('.round').text(i);
+        //
+        //});
         save();
     }
 
@@ -154,6 +186,7 @@ var blitzscorer = function () {
         $rounds.find('.delete button').removeClass('btn-danger');
         $rounds.find('.delete-confirm-msg').remove();
         localStorage.setItem("rounds", $rounds.html());
+        localStorage.setItem("playercount", getPlayerCount());
     }
 
     function load() {
@@ -166,9 +199,16 @@ var blitzscorer = function () {
         else {
             $("#rounds").html(rows);
         }
+
         updateTotals();
 
+        var playerCount = localStorage.getItem("playercount");
+        $('a[data-action="change-player-count"][data-value="' + playerCount + '"]').click();
 
+        $('#rounds td.score.selected').click();
     }
+
+
+    load();
 
 }(jQuery);

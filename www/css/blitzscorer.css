@@ -43,7 +43,7 @@ td.score.selected {
   /*padding: 5px 10px;*/
 /*}*/
 
-#scoresheet thead th {
+#scoresheet thead th.rotate {
   /* Something you can count on */
   height: 80px;
   white-space: nowrap;
@@ -51,7 +51,7 @@ td.score.selected {
     border: none;
 }
 
-#scoresheet thead th > div {
+#scoresheet thead th.rotate > div {
   transform:
     /* Magic Numbers */
     translate(0px, 2px)
@@ -60,7 +60,7 @@ td.score.selected {
     rotate(270deg);
   width: 8px;
 }
-#scoresheet thead th > div > span {
+#scoresheet thead th.rotate > div > span {
   /*border-bottom: 1px solid #ccc;*/
   /*padding: 5px 10px;*/
 }
