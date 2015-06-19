@@ -2,20 +2,25 @@
 
 #rounds tr.warning .score {
     /*font-size: 24px;*/
-    font-weight: bold;
+    /*font-weight: bold;*/
     /*text-align: center;*/
 }
 #rounds tr.warning td {
     /*line-height: 24px;*/
 }
 #rounds tr.warning td {
-    font-weight: bold;
+    /*font-weight: bold;*/
 }
 #rounds tr td.delete {
     position: relative;
+    padding: 8px 2px;
 }
 #rounds tr {
     cursor: pointer;
+}
+td.score.selected {
+    background: #d9edf7 !important;
+    font-weight: bold;
 }
 
 

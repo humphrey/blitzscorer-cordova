@@ -77,9 +77,9 @@ var blitzscorer = function () {
         }
         else {
 
-            $this.addClass('btn-danger');
+            $this.addClass('btn-danger').removeClass('btn-link');
 
-            var $msg = $('<span class="label label-danger delete-confirm-msg" style="position: absolute; top: -8px; right: 4px;">Tap again to delete</span>');
+            var $msg = $('<span class="label label-danger delete-confirm-msg" style="position: absolute; top: -9px; right: 4px;">Tap again to delete</span>');
 
             $this.parents('td').append($msg);
 
@@ -87,7 +87,7 @@ var blitzscorer = function () {
                 $msg.fadeOut('fast', function() {
                     $('.delete-confirm-msg').remove();
                 });
-                $this.removeClass('btn-danger');
+                $this.removeClass('btn-danger').addClass('btn-link');
 
             }, 3000);
 
@@ -96,31 +96,37 @@ var blitzscorer = function () {
 
     });
 
-    $('#rounds').on('click', 'tr', function() {
+    $('#rounds').on('click', 'td.score', function() {
 
+        var $this = $(this);
+        $("#scoresheet").find('tr,th,td').removeClass('selected').removeClass('warning');
+        $this.addClass('selected');
+        $this.parents('tr').addClass('warning');
 
-        $("#rounds tr").removeClass('warning');
-        $(this).addClass('warning');
+        var col = $this.index() + 1;
+        $("#scoresheet tr td:nth-child(" + col + ")").addClass('warning');
+        $("#scoresheet tr th:nth-child(" + col + ")").addClass('warning');
+
         save();
         return false;
 
     });
 
     function nextRound() {
-        var i = $("#rounds tr").removeClass('warning').length + 1;
-        console.log(i);
+        var i = $("#rounds tr").length + 1;
+        //console.log(i);
 
-        var $tr = $('<tr>').addClass('warning');
+        var $tr = $('<tr>');
 
-        $tr.append( $('<td class="round"></td>').text(i) );
+        $tr.append( $('<th class="round"></th>').text(i) );
         for( var p=0 ; p < 8 ; p++) {
             $tr.append('<td class="score">0</td>');
         }
-        //$tr.append( $('<td class="score">0</td>') );
-        //$tr.append( $('<td class="total"></td>') );
-        $tr.append( $('<td class="delete"><button data-action="delete-round" class="btn btn-xs btn-default"><span class="glyphicon glyphicon-trash"></span></button></td>') );
+        $tr.append( $('<td class="delete"><button data-action="delete-round" class="btn btn-xs btn-link"><span class="glyphicon glyphicon-trash"></span></button></td>') );
 
         $("#rounds").append($tr);
+
+        $tr.find('.score').first().click();
 
         updateTotals();
 
