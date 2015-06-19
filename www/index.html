@@ -44,7 +44,7 @@
     </div><!-- /.container-fluid -->
 </nav>
 
-<div style="height: 70px;"></div>
+<div style="height: 50px;"></div>
 
 
 <div class="container">
@@ -58,61 +58,63 @@
                 <!--<div class="panel-heading">Your score</div>-->
 
                 <!-- Table -->
-                <table class="table table-bordered" id="scoresheet">
-                    <thead>
-                        <tr id="players">
-                            <th class="rotate"><div><span>Round</span></div></th>
-                            <th class="player rotate"><div><span>Player 1</span></div></th>
-                            <th class="player rotate"><div><span>Player 2</span></div></th>
-                            <th class="player rotate"><div><span>Player 3</span></div></th>
-                            <th class="player rotate"><div><span>Player 4</span></div></th>
-                            <th class="player rotate"><div><span>Player 5</span></div></th>
-                            <th class="player rotate"><div><span>Player 6</span></div></th>
-                            <th class="player rotate"><div><span>Player 7</span></div></th>
-                            <th class="player rotate"><div><span>Player 8</span></div></th>
-                            <th style="width: 24px;" class="action-col">
+                <div id="scoresheet-wrap">
+                    <table class="table" id="scoresheet">
+                        <thead>
+                            <tr id="players">
+                                <th class="rotate" style="padding-left: 18px;"><div><span>Round</span></div></th>
+                                <th class="player rotate"><div><span>Player 1</span></div></th>
+                                <th class="player rotate"><div><span>Player 2</span></div></th>
+                                <th class="player rotate"><div><span>Player 3</span></div></th>
+                                <th class="player rotate"><div><span>Player 4</span></div></th>
+                                <th class="player rotate"><div><span>Player 5</span></div></th>
+                                <th class="player rotate"><div><span>Player 6</span></div></th>
+                                <th class="player rotate"><div><span>Player 7</span></div></th>
+                                <th class="player rotate"><div><span>Player 8</span></div></th>
+                                <th style="width: 24px;" class="action-col">
 
 
-                                <!-- Single button -->
-                                <div class="btn-group pull-right" style="margin-bottom: 20px;">
-                                  <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <span class="glyphicon glyphicon-cog"></span>
-                                    <!--<br/>-->
-                                      <span class="caret"></span>
-                                  </button>
-                                  <ul class="dropdown-menu" id="playercount">
-                                    <li><a href="#" data-value="1" class="playercount" data-action="change-player-count">1 Player</a></li>
-                                    <li><a href="#" data-value="2" class="playercount" data-action="change-player-count">2 Players</a></li>
-                                    <li><a href="#" data-value="3" class="playercount" data-action="change-player-count">3 Players</a></li>
-                                    <li class="active"><a href="#" data-value="4" class="playercount" data-action="change-player-count">4 Players</a></li>
-                                    <li><a href="#" data-value="5" class="playercount" data-action="change-player-count">5 Players</a></li>
-                                    <li><a href="#" data-value="6" class="playercount" data-action="change-player-count">6 Players</a></li>
-                                    <li><a href="#" data-value="7" class="playercount" data-action="change-player-count">7 Players</a></li>
-                                    <li><a href="#" data-value="8" class="playercount" data-action="change-player-count">8 Players</a></li>
-                                    <!--<li role="separator" class="divider"></li>-->
-                                    <!--<li><a href="#">Separated link</a></li>-->
-                                  </ul>
-                                </div>
+                                    <!-- Single button -->
+                                    <div class="btn-group pull-right" style="margin-bottom: 20px;">
+                                      <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <span class="glyphicon glyphicon-cog"></span>
+                                        <!--<br/>-->
+                                          <span class="caret"></span>
+                                      </button>
+                                      <ul class="dropdown-menu" id="playercount">
+                                        <li><a href="#" data-value="1" class="playercount" data-action="change-player-count">1 Player</a></li>
+                                        <li><a href="#" data-value="2" class="playercount" data-action="change-player-count">2 Players</a></li>
+                                        <li><a href="#" data-value="3" class="playercount" data-action="change-player-count">3 Players</a></li>
+                                        <li class="active"><a href="#" data-value="4" class="playercount" data-action="change-player-count">4 Players</a></li>
+                                        <li><a href="#" data-value="5" class="playercount" data-action="change-player-count">5 Players</a></li>
+                                        <li><a href="#" data-value="6" class="playercount" data-action="change-player-count">6 Players</a></li>
+                                        <li><a href="#" data-value="7" class="playercount" data-action="change-player-count">7 Players</a></li>
+                                        <li><a href="#" data-value="8" class="playercount" data-action="change-player-count">8 Players</a></li>
+                                        <!--<li role="separator" class="divider"></li>-->
+                                        <!--<li><a href="#">Separated link</a></li>-->
+                                      </ul>
+                                    </div>
 
-                            </th>
-                        </tr>
-                    </thead>
-                    <tbody id="rounds"></tbody>
-                    <tfoot>
-                        <tr id="totals" class="">
-                            <th>T</th>
-                            <th class="total">0</th>
-                            <th class="total">0</th>
-                            <th class="total">0</th>
-                            <th class="total">0</th>
-                            <th class="total">0</th>
-                            <th class="total">0</th>
-                            <th class="total">0</th>
-                            <th class="total">0</th>
-                            <th></th>
-                        </tr>
-                    </tfoot>
-                </table>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody id="rounds"></tbody>
+                        <tfoot>
+                            <tr id="totals" class="">
+                                <th></th>
+                                <th class="total">0</th>
+                                <th class="total">0</th>
+                                <th class="total">0</th>
+                                <th class="total">0</th>
+                                <th class="total">0</th>
+                                <th class="total">0</th>
+                                <th class="total">0</th>
+                                <th class="total">0</th>
+                                <th></th>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
                 <!--<div class="panel-footer"></div>-->
             <!--</div>-->
 

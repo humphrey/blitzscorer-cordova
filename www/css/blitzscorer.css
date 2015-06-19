@@ -14,6 +14,7 @@
 #rounds tr td.delete {
     position: relative;
     padding: 8px 2px;
+    text-align: center;
 }
 #rounds tr {
     cursor: pointer;
@@ -22,6 +23,35 @@ td.score.selected {
     background: #d9edf7 !important;
     font-weight: bold;
 }
+
+#scoresheet-wrap { margin: 0 -15px; }
+#scoresheet th,
+#scoresheet td {
+    border: none;
+}
+#scoresheet th:first-child,
+#scoresheet td:first-child {
+    padding-left: 18px;
+    /*font-size: 14px;*/
+    border-right: 1px solid #aaa !important;
+}
+#scoresheet th:last-child,
+#scoresheet td:last-child {
+    padding-right: 7px;
+    /*font-size: 14px;*/
+    border-left: 1px solid #aaa !important;
+}
+#scoresheet thead th { border-bottom: 1px solid #aaa !important;}
+#scoresheet tfoot th {
+    border-top: 1px solid #aaa !important;
+    /*border-bottom: 1px solid #aaa !important;*/
+    /*background: #d3e6f0;*/
+    /*color: #fff;*/
+}
+td.score {
+    border: 1px solid #ddd;
+}
+
 
 
 /*th.player {*/
@@ -45,7 +75,7 @@ td.score.selected {
 
 #scoresheet thead th.rotate {
   /* Something you can count on */
-  height: 80px;
+  height: 90px;
   white-space: nowrap;
     padding: 10px 8px;
     border: none;
