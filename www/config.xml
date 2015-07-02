@@ -65,7 +65,7 @@
 <!--    <gap:plugin name="org.apache.cordova.inappbrowser" />-->
 <!--    <gap:plugin name="org.apache.cordova.media" />-->
 <!--    <gap:plugin name="org.apache.cordova.network-information" />-->
-<!--    <gap:plugin name="org.apache.cordova.splashscreen" />-->
+    <gap:plugin name="org.apache.cordova.splashscreen" />
 <!--    <gap:plugin name="org.apache.cordova.vibration" />-->
 
     <!-- Third party plugins -->
@@ -93,17 +93,27 @@
     <icon src="www/res/icon/windows-phone/icon-173-tile.png" gap:platform="winphone"   gap:role="background" />
 
     <!-- Define app splash screen for each platform. -->
-    <gap:splash src="www/res/screen/android/screen-ldpi-portrait.png"       gap:platform="android" gap:qualifier="port-ldpi" />
-    <gap:splash src="www/res/screen/android/screen-mdpi-portrait.png"       gap:platform="android" gap:qualifier="port-mdpi" />
-    <gap:splash src="www/res/screen/android/screen-hdpi-portrait.png"       gap:platform="android" gap:qualifier="port-hdpi" />
-    <gap:splash src="www/res/screen/android/screen-xhdpi-portrait.png"      gap:platform="android" gap:qualifier="port-xhdpi" />
-    <gap:splash src="www/res/screen/blackberry/screen-225.png"              gap:platform="blackberry" />
-    <gap:splash src="www/res/screen/ios/screen-iphone-portrait.png"         gap:platform="ios"     width="320" height="480" />
-    <gap:splash src="www/res/screen/ios/screen-iphone-portrait-2x.png"      gap:platform="ios"     width="640" height="960" />
-    <gap:splash src="www/res/screen/ios/screen-iphone-portrait-568h-2x.png" gap:platform="ios"     width="640" height="1136" />
-    <gap:splash src="www/res/screen/ios/screen-ipad-portrait.png"           gap:platform="ios"     width="768" height="1024" />
-    <gap:splash src="www/res/screen/ios/screen-ipad-landscape.png"          gap:platform="ios"     width="1024" height="768" />
-    <gap:splash src="www/res/screen/windows-phone/screen-portrait.jpg"      gap:platform="winphone" />
+    <gap:splash src="www/res/screen/android/res-long-land-ldpi.png"       gap:platform="android" gap:qualifier="land-ldpi" />
+    <gap:splash src="www/res/screen/android/res-long-land-mdpi.png"       gap:platform="android" gap:qualifier="land-mdpi" />
+    <gap:splash src="www/res/screen/android/res-long-land-hdpi.png"       gap:platform="android" gap:qualifier="land-hdpi" />
+    <gap:splash src="www/res/screen/android/res-long-land-xhdpi.png"      gap:platform="android" gap:qualifier="land-xhdpi" />
+    <gap:splash src="www/res/screen/android/res-long-land-xxhdpi.png"     gap:platform="android" gap:qualifier="land-xxlandhdpi" />
+    <gap:splash src="www/res/screen/android/res-long-land-xxxhdpi.png"    gap:platform="android" gap:qualifier="land-xxxhdpi" />
+    <gap:splash src="www/res/screen/android/res-long-port-ldpi.png"       gap:platform="android" gap:qualifier="port-ldpi" />
+    <gap:splash src="www/res/screen/android/res-long-port-mdpi.png"       gap:platform="android" gap:qualifier="port-mdpi" />
+    <gap:splash src="www/res/screen/android/res-long-port-hdpi.png"       gap:platform="android" gap:qualifier="port-hdpi" />
+    <gap:splash src="www/res/screen/android/res-long-port-xhdpi.png"      gap:platform="android" gap:qualifier="port-xhdpi" />
+    <gap:splash src="www/res/screen/android/res-long-port-xxhdpi.png"     gap:platform="android" gap:qualifier="port-xxhdpi" />
+    <gap:splash src="www/res/screen/android/res-long-port-xxxhdpi.png"    gap:platform="android" gap:qualifier="port-xxxhdpi" />
+
+
+    <!--<gap:splash src="www/res/screen/blackberry/screen-225.png"              gap:platform="blackberry" />-->
+    <!--<gap:splash src="www/res/screen/ios/screen-iphone-portrait.png"         gap:platform="ios"     width="320" height="480" />-->
+    <!--<gap:splash src="www/res/screen/ios/screen-iphone-portrait-2x.png"      gap:platform="ios"     width="640" height="960" />-->
+    <!--<gap:splash src="www/res/screen/ios/screen-iphone-portrait-568h-2x.png" gap:platform="ios"     width="640" height="1136" />-->
+    <!--<gap:splash src="www/res/screen/ios/screen-ipad-portrait.png"           gap:platform="ios"     width="768" height="1024" />-->
+    <!--<gap:splash src="www/res/screen/ios/screen-ipad-landscape.png"          gap:platform="ios"     width="1024" height="768" />-->
+    <!--<gap:splash src="www/res/screen/windows-phone/screen-portrait.jpg"      gap:platform="winphone" />-->
 
     <!--
         Define access to external domains.
