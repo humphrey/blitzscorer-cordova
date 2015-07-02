@@ -169,12 +169,17 @@
 
 <script>
     /* Auto-hide the splash screen */
-    function onDeviceReady() {
+    document.addEventListener("deviceready", function onDeviceReady() {
+
+        alert('device ready!');
+        alert(navigator);
+        alert(navigator.splashscreen);
         if (navigator && navigator.splashscreen) {
             navigator.splashscreen.hide();
         };
-    }
-    document.addEventListener("deviceready", onDeviceReady, false);
+
+    });
+    alert(navigator);
 </script>
 
 <!-- Latest compiled and minified JavaScript -->

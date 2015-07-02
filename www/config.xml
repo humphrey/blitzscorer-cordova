@@ -49,13 +49,16 @@
 
     <preference name="LoadingDialog" value="Blitz Scorer,Written by Humphrey Murray"/>
     <!--<preference name="ShowTitle" value="true"/>-->
+    <preference name="SplashScreenBackgroundColor" value="#183317" />
     <preference name="SplashScreenDelay"          value="10000"/>
     <preference name="SplashScreen"               value="splash"/>
     <preference name="AutoHideSplashScreen"       value="false" />
+    <preference name="ShowSplashScreen"           value="true" />
+    <preference name="SplashMaintainAspectRatio"  value="true" />
 
     <preference name="ShowSplashScreenSpinner"    value="false" />
     <preference name="FadeSplashScreen"           value="true" />
-    <preference name="FadeSplashScreenDuration"   value="0.25" />
+    <preference name="FadeSplashScreenDuration"   value="0.5" />
     <!--
         Define a specific version of PhoneGap to build into your app.
         <preference name="phonegap-version"       value="3.5.0" />
