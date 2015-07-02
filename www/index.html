@@ -4,8 +4,25 @@
     <meta charset="UTF-8">
     <title>Blitz Scorer - Keep track of your own Dutch Blitz score.</title>
     <meta name="description" content="Simple app to keep track of your own Dutch Blitz Score.">
-
     <meta name=viewport content="width=device-width, initial-scale=1">
+
+    <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+    <script type="text/javascript" charset="utf-8">
+
+        // Wait for device API libraries to load
+        //
+        function onLoad() {
+            document.addEventListener("deviceready", onDeviceReady, false);
+        }
+
+        // device APIs are available
+        //
+        function onDeviceReady() {
+            // Now safe to use device APIs
+            navigator.splashscreen.hide();
+        }
+
+    </script>
 
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="css/bootstrap-3.3.5-dist/css/bootstrap.min.css">
@@ -14,7 +31,7 @@
     <link rel="stylesheet" href="css/bootstrap-3.3.5-dist/css/bootstrap-theme.min.css">
     <link rel="stylesheet" href="css/blitzscorer.css">
 </head>
-<body>
+<body onload="onLoad()">
 
 <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container">
@@ -166,21 +183,6 @@
     </div>
     </div><!-- /.container-fluid -->
 </nav>
-
-<script>
-    /* Auto-hide the splash screen */
-    document.addEventListener("deviceready", function onDeviceReady() {
-
-        alert('device ready!');
-        alert(navigator);
-        alert(navigator.splashscreen);
-        if (navigator && navigator.splashscreen) {
-            navigator.splashscreen.hide();
-        };
-
-    });
-    alert(navigator);
-</script>
 
 <!-- Latest compiled and minified JavaScript -->
 <script src="js/jquery-2.1.4/jquery-2.1.4.min.js"></script>
