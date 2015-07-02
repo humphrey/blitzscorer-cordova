@@ -97,7 +97,7 @@
     <gap:splash src="www/res/screen/android/res-long-land-mdpi.png"       gap:platform="android" gap:qualifier="land-mdpi" />
     <gap:splash src="www/res/screen/android/res-long-land-hdpi.png"       gap:platform="android" gap:qualifier="land-hdpi" />
     <gap:splash src="www/res/screen/android/res-long-land-xhdpi.png"      gap:platform="android" gap:qualifier="land-xhdpi" />
-    <gap:splash src="www/res/screen/android/res-long-land-xxhdpi.png"     gap:platform="android" gap:qualifier="land-xxlandhdpi" />
+    <gap:splash src="www/res/screen/android/res-long-land-xxhdpi.png"     gap:platform="android" gap:qualifier="land-xxhdpi" />
     <gap:splash src="www/res/screen/android/res-long-land-xxxhdpi.png"    gap:platform="android" gap:qualifier="land-xxxhdpi" />
     <gap:splash src="www/res/screen/android/res-long-port-ldpi.png"       gap:platform="android" gap:qualifier="port-ldpi" />
     <gap:splash src="www/res/screen/android/res-long-port-mdpi.png"       gap:platform="android" gap:qualifier="port-mdpi" />
