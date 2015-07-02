@@ -167,6 +167,16 @@
     </div><!-- /.container-fluid -->
 </nav>
 
+<script>
+    /* Auto-hide the splash screen */
+    function onDeviceReady() {
+        if (navigator && navigator.splashscreen) {
+            navigator.splashscreen.hide();
+        };
+    }
+    document.addEventListener("deviceready", onDeviceReady, false);
+</script>
+
 <!-- Latest compiled and minified JavaScript -->
 <script src="js/jquery-2.1.4/jquery-2.1.4.min.js"></script>
 <script src="js/bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
