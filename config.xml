@@ -31,7 +31,7 @@
     <!-- Status Bar -->
     <plugin name="cordova-plugin-statusbar" />
     <preference name="StatusBarOverlaysWebView" value="false" />
-    <preference name="StatusBarBackgroundColor" value="#777777" />
+    <!--<preference name="StatusBarBackgroundColor" value="#777777" />-->
     <preference name="StatusBarBackgroundColor" value="#32692d" />
     <!--<preference name="StatusBarStyle" value="lightcontent" />-->
     <!--<feature name="StatusBar">-->
@@ -61,6 +61,13 @@
 
     <!--<access origin="*" />-->
     <access />
+
+    <!--
+      If you do not want any permissions to be added to your app, add the
+      following tag to your config.xml; you will still have the INTERNET
+      permission on your app, which PhoneGap requires.
+    -->
+    <preference name="permissions" value="none"/>
 
     <!--<allow-intent href="http://*/*" />-->
     <!--<allow-intent href="https://*/*" />-->
