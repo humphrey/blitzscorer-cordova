@@ -2,7 +2,7 @@
 <widget xmlns="http://www.w3.org/ns/widgets"
         xmlns:cdv="http://cordova.apache.org/ns/1.0"
         id="com.blitzscorer"
-        version="3.0.1">
+        version="3.0.2">
 
     <preference name='phonegap-version' value='cli-5.1.1' />
 
