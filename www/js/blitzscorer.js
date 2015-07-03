@@ -20,13 +20,33 @@ var blitzscorer = function () {
         return false;
 
     });
-
     $('button[data-action="new-game"]').click(function() {
 
-        if (confirm("All scores will be deleted.  Continue?")) {
+        var startNewGame = function() {
             $("#rounds").html("");
             nextRound();
         }
+
+        var onConfirm = function (buttonIndex) {
+            if (buttonIndex == 1) {
+                startNewGame();
+            }
+        }
+
+        if (window.navigator !== undefined && navigator.notification !== undefined) {
+            navigator.notification.confirm(
+                'All scores will be deleted.  Continue?',  // message
+                onConfirm,                  // callback to invoke
+                'Reset Scoreboard',            // title
+                ['Yes', 'Cancel']             // buttonLabels
+            );
+        }
+        else {
+            if (confirm("All scores will be deleted.  Continue?")) {
+                startNewGame();
+            }
+        }
+
         return false;
 
     });
