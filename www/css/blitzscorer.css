@@ -82,12 +82,9 @@ td.score {
 }
 
 #scoresheet thead th.rotate > div {
-  transform:
-    /* Magic Numbers */
-    translate(0px, 2px)
-    /* 45 is really 360 - 45 */
-    /*rotate(315deg);*/
-    rotate(270deg);
+  -ms-transform: translate(0px, 2px) rotate(270deg);
+  -webkit-transform: translate(0px, 2px) rotate(270deg);
+  transform: translate(0px, 2px) rotate(270deg);
   width: 8px;
 }
 #scoresheet thead th.rotate > div > span {
