@@ -4,6 +4,8 @@
         id="com.blitzscorer"
         version="3.0.1">
 
+    <preference name='phonegap-version' value='cli-5.1.1' />
+
     <name>Blitz Scorer</name>
     <description>
         Simple app to keep track of your own Dutch Blitz Score.
@@ -23,10 +25,10 @@
     <preference name="exit-on-suspend"            value="false" />          <!-- ios: if set to true, app will terminate when home button is pressed -->
     <preference name="show-splash-screen-spinner" value="false" />           <!-- ios: if set to false, the spinner won't appear on the splash screen during app loading -->
 
-    <!-- Unknown Phonegap things -->
-    <preference name="ShowTitle"                   value="false"/>
-    <preference name="target-device"              value="universal" />      <!-- all: possible values handset, tablet, or universal -->
-    <preference name="android-minSdkVersion"      value="14" />              <!-- android: MIN SDK version supported on the target device. MAX version is blank by default. Setting to 14 to hide the menu button -->
+    <!--&lt;!&ndash; Unknown Phonegap things &ndash;&gt;-->
+    <!--<preference name="ShowTitle"                   value="false"/>-->
+    <!--<preference name="target-device"              value="universal" />      &lt;!&ndash; all: possible values handset, tablet, or universal &ndash;&gt;-->
+    <!--<preference name="android-minSdkVersion"      value="14" />              &lt;!&ndash; android: MIN SDK version supported on the target device. MAX version is blank by default. Setting to 14 to hide the menu button &ndash;&gt;-->
 
 
     <!-- Screen Orientation (iOS) -->
