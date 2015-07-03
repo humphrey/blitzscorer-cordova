@@ -34,8 +34,12 @@ var app = {
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
         // Now safe to use device APIs
-        if (navigator.splashscreen != undefined)
+        if (navigator.splashscreen != undefined) {
             navigator.splashscreen.hide();
+        }
+
+        // allow user rotate
+        screen.unlockOrientation();
     }
 };
 

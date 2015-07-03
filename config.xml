@@ -16,10 +16,17 @@
 
 
     <preference name="fullscreen"                 value="false" />           <!-- all: hides the status bar at the top of the screen -->
+    <preference name="Orientation"                value="default" />
+
     <!--<preference name="ios-statusbarstyle"         value="black-opaque" />   &lt;!&ndash; ios: black-translucent will appear black because the PhoneGap webview doesn't go beneath the status bar &ndash;&gt;-->
     <preference name="detect-data-types"          value="true" />           <!-- ios: controls whether data types (such as phone no. and dates) are automatically turned into links by the system -->
     <preference name="exit-on-suspend"            value="false" />          <!-- ios: if set to true, app will terminate when home button is pressed -->
     <preference name="show-splash-screen-spinner" value="false" />           <!-- ios: if set to false, the spinner won't appear on the splash screen during app loading -->
+
+
+    <!-- Screen Orientation (iOS) -->
+    <plugin name="cordova-plugin-screen-orientation" />
+
 
     <!-- Status Bar -->
     <plugin name="cordova-plugin-statusbar" />
