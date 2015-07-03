@@ -103,3 +103,11 @@ td.score {
   /*border-bottom: 1px solid #ccc;*/
   /*padding: 5px 10px;*/
 }
+
+
+
+/* http://stackoverflow.com/a/21062165 */
+html {
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+}

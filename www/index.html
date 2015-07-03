@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Blitz Scorer - Keep track of your own Dutch Blitz score.</title>
     <meta name="description" content="Simple app to keep track of your own Dutch Blitz Score.">
-    <meta name=viewport content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="css/bootstrap-3.3.5-dist/css/bootstrap.min.css">
@@ -182,5 +182,15 @@
 <script src="js/jquery-2.1.4/jquery-2.1.4.min.js"></script>
 <script src="js/bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
 <script src="js/blitzscorer.js"></script>
+
+<!-- https://github.com/ftlabs/fastclick -->
+<!-- http://labs.ft.com/articles/ft-fastclick/ -->
+<script src='js/jquery.fastclick-2015-7-3.js'></script>
+<script>
+    $(function() {
+        FastClick.attach(document.body);
+    });
+</script>
+
 </body>
 </html>
