@@ -52,6 +52,18 @@ td.score {
     border: 1px solid #ddd;
 }
 
+@media (min-width: 768px) {
+    /*.navbar-fixed-bottom {*/
+    .btn[data-action="change-score"] {
+        padding: 10px 16px !important;
+        font-size: 18px;
+        line-height: 1.3333333;
+        border-radius: 6px;
+    }
+
+    /*}*/
+}
+
 
 
 /*th.player {*/
