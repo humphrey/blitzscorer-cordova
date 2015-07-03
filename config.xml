@@ -23,6 +23,11 @@
     <preference name="exit-on-suspend"            value="false" />          <!-- ios: if set to true, app will terminate when home button is pressed -->
     <preference name="show-splash-screen-spinner" value="false" />           <!-- ios: if set to false, the spinner won't appear on the splash screen during app loading -->
 
+    <!-- Unknown Phonegap things -->
+    <preference name="ShowTitle"                   value="false"/>
+    <preference name="target-device"              value="universal" />      <!-- all: possible values handset, tablet, or universal -->
+    <preference name="android-minSdkVersion"      value="14" />              <!-- android: MIN SDK version supported on the target device. MAX version is blank by default. Setting to 14 to hide the menu button -->
+
 
     <!-- Screen Orientation (iOS) -->
     <plugin name="cordova-plugin-screen-orientation" />
