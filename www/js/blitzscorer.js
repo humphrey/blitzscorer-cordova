@@ -187,6 +187,7 @@ var blitzscorer = function () {
     function load() {
 
         var rows = localStorage.getItem("rounds");
+
         if (rows == null || rows == 'undefined' || rows == undefined) {
             $("#rounds").html("");
             nextRound();
@@ -196,6 +197,7 @@ var blitzscorer = function () {
         }
 
         var playerCount = localStorage.getItem("playercount");
+
         $('a[data-action="change-player-count"][data-value="' + playerCount + '"]').click();
 
         updateTotals();
