@@ -1,6 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget xmlns="http://www.w3.org/ns/widgets"
         xmlns:cdv="http://cordova.apache.org/ns/1.0"
+        xmlns:gap = "http://phonegap.com/ns/1.0"
         id="com.blitzscorer"
         version="3.0.2">
 
@@ -33,10 +34,12 @@
 
     <!-- Screen Orientation (iOS) -->
     <plugin name="cordova-plugin-screen-orientation" />
+    <gap:plugin name="cordova-plugin-screen-orientation" />
 
 
     <!-- Status Bar -->
     <plugin name="cordova-plugin-statusbar" />
+    <gap:plugin name="cordova-plugin-statusbar" />
     <preference name="StatusBarOverlaysWebView" value="false" />
     <!--<preference name="StatusBarBackgroundColor" value="#777777" />-->
     <preference name="StatusBarBackgroundColor" value="#32692d" />
@@ -62,12 +65,21 @@
     <!--<plugin name="org.apache.cordova.splashscreen" />-->
 
     <plugin name="cordova-plugin-whitelist" version="1" />
+    <gap:plugin name="cordova-plugin-whitelist" version="1" />
     <plugin name="cordova-plugin-dialogs" />
+    <gap:plugin name="cordova-plugin-dialogs" />
 
     <icon src="icon.png" />
 
     <access origin="*" />
     <!--<access />-->
+
+    <!--
+      If you do not want any permissions to be added to your app, add the
+      following tag to your config.xml; you will still have the INTERNET
+      permission on your app, which PhoneGap requires.
+    -->
+    <preference name="permissions" value="none"/>
 
 
     <!--<allow-intent href="http://*/*" />-->
@@ -79,13 +91,6 @@
 
     <platform name="android">
         <allow-intent href="market:*" />
-
-    <!--
-      If you do not want any permissions to be added to your app, add the
-      following tag to your config.xml; you will still have the INTERNET
-      permission on your app, which PhoneGap requires.
-    -->
-    <preference name="permissions" value="none"/>
         
         <icon src="www/res/icon/android/icon-36-ldpi.png"     density="ldpi" />
         <icon src="www/res/icon/android/icon-48-mdpi.png"     density="mdpi" />
