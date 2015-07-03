@@ -167,7 +167,7 @@ var blitzscorer = function () {
     function load() {
 
         var rows = localStorage.getItem("rounds");
-        if (rows == null) {
+        if (rows == null || rows == 'undefined' || rows == undefined) {
             $("#rounds").html("");
             nextRound();
         }
