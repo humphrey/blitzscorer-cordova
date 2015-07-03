@@ -16,10 +16,20 @@
 
 
     <preference name="fullscreen"                 value="false" />           <!-- all: hides the status bar at the top of the screen -->
-    <preference name="ios-statusbarstyle"         value="black-opaque" />   <!-- ios: black-translucent will appear black because the PhoneGap webview doesn't go beneath the status bar -->
+    <!--<preference name="ios-statusbarstyle"         value="black-opaque" />   &lt;!&ndash; ios: black-translucent will appear black because the PhoneGap webview doesn't go beneath the status bar &ndash;&gt;-->
     <preference name="detect-data-types"          value="true" />           <!-- ios: controls whether data types (such as phone no. and dates) are automatically turned into links by the system -->
     <preference name="exit-on-suspend"            value="false" />          <!-- ios: if set to true, app will terminate when home button is pressed -->
     <preference name="show-splash-screen-spinner" value="false" />           <!-- ios: if set to false, the spinner won't appear on the splash screen during app loading -->
+
+    <!-- Status Bar -->
+    <plugin name="cordova-plugin-statusbar" />
+    <preference name="StatusBarOverlaysWebView" value="false" />
+    <preference name="StatusBarBackgroundColor" value="#777777" />
+    <preference name="StatusBarBackgroundColor" value="#32692d" />
+    <!--<preference name="StatusBarStyle" value="lightcontent" />-->
+    <!--<feature name="StatusBar">-->
+        <!--<param name="ios-package" value="CDVStatusBar" onload="true" />-->
+    <!--</feature>-->
 
     <!-- No Splashscreen -->
     <preference name="BackgroundColor" value="0xffffffff"/>                  <!--  Set the app's background color. Supports a four-byte hex value, with the first byte representing the alpha channel, and standard RGB values for the following three bytes.  -->
