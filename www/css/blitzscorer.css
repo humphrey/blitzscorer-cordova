@@ -52,38 +52,15 @@ td.score {
     border: 1px solid #ddd;
 }
 
-@media (min-width: 768px) {
-    /*.navbar-fixed-bottom {*/
-    .btn[data-action="change-score"] {
-        padding: 10px 16px !important;
-        font-size: 18px;
-        line-height: 1.3333333;
-        border-radius: 6px;
-    }
-
+/*@media (min-width: 768px) {*/
+    /*.btn[data-action="change-score"] {*/
+        /*padding: 10px 16px !important;*/
+        /*font-size: 18px;*/
+        /*line-height: 1.3333333;*/
+        /*border-radius: 6px;*/
     /*}*/
-}
-
-
-
-/*th.player {*/
-  /*/!* Something you can count on *!/*/
-  /*height: 240px;*/
-  /*white-space: nowrap;*/
 /*}*/
 
-/*th.player > div {*/
-  /*transform:*/
-    /*/!* Magic Numbers *!/*/
-    /*translate(25px, -3px)*/
-    /*/!* 45 is really 360 - 45 *!/*/
-    /*rotate(315deg);*/
-  /*width: 30px;*/
-/*}*/
-/*th.player > div > span {*/
-  /*border-bottom: 1px solid #ccc;*/
-  /*padding: 5px 10px;*/
-/*}*/
 
 #scoresheet thead th.rotate {
   /* Something you can count on */
@@ -110,4 +87,9 @@ td.score {
 html {
     -ms-touch-action: manipulation;
     touch-action: manipulation;
+}
+
+
+.hide {
+    display: none;
 }

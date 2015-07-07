@@ -20,7 +20,7 @@ var blitzscorer = function () {
         return false;
 
     });
-    $('button[data-action="new-game"]').click(function() {
+    $('[data-action="new-game"]').click(function() {
 
         var onConfirm = function (buttonIndex) {
             if (buttonIndex == 1) {
@@ -40,10 +40,10 @@ var blitzscorer = function () {
 
     });
 
-    $('a[data-action="change-player-count"]').click(function() {
+    $('[data-action="change-player-count"]').click(function() {
 
         $('#playercount li').removeClass('active');
-        $(this).parents('li').addClass('active').parents('.btn-group').removeClass('open');
+        $(this).addClass('active');
         updateTotals();
         save();
         return false;
@@ -51,7 +51,7 @@ var blitzscorer = function () {
     });
 
     function getPlayerCount() {
-        return $("#players .active").index() + 1;
+        return $("#playercount .active").index() + 1;
     }
 
     $('#rounds').on('click', 'td.delete', function() {
@@ -122,7 +122,7 @@ var blitzscorer = function () {
         for( var p=0 ; p < 8 ; p++) {
             $tr.append('<td class="score">0</td>');
         }
-        $tr.append( $('<td class="delete"><div><button data-action="delete-round" class="btn btn-xs btn-link"><span class="glyphicon glyphicon-trash"></span></button></div></td>') );
+        $tr.append( $('<td class="delete"><div><button data-action="delete-round" class="btn btn-xs btn-link mdl-button mdl-js-button"><i class="mdl-color-text--blue-grey-400 material-icons">delete</i></button></div></td>') );
 
         $("#rounds").append($tr);
 
