@@ -22,30 +22,19 @@ var blitzscorer = function () {
     });
     $('button[data-action="new-game"]').click(function() {
 
-        var startNewGame = function() {
-            $("#rounds").html("");
-            nextRound();
-        }
-
         var onConfirm = function (buttonIndex) {
             if (buttonIndex == 1) {
-                startNewGame();
+                $("#rounds").html("");
+                nextRound();
             }
         }
 
-        if (window.navigator !== undefined && navigator.notification !== undefined) {
-            navigator.notification.confirm(
-                'All scores will be deleted.  Continue?',  // message
-                onConfirm,                  // callback to invoke
-                'Reset Scoreboard',            // title
-                ['Yes', 'Cancel']             // buttonLabels
-            );
-        }
-        else {
-            if (confirm("All scores will be deleted.  Continue?")) {
-                startNewGame();
-            }
-        }
+        navigator.notification.confirm(
+            'All scores will be deleted.ddddd  Continue?',  // message
+            onConfirm,                  // callback to invoke
+            'Reset Scoreboard',            // title
+            ['Yes', 'Cancel']             // buttonLabels
+        );
 
         return false;
 
@@ -65,9 +54,9 @@ var blitzscorer = function () {
         return $("#players .active").index() + 1;
     }
 
-    $('#rounds').on('click', 'button[data-action="delete-round"]', function() {
+    $('#rounds').on('click', 'td.delete', function() {
 
-        var $this = $(this);
+        var $this = $(this).find('button');
         if ($this.hasClass('btn-danger')) {
 
             var $tr = $this.parents('tr');
@@ -133,7 +122,7 @@ var blitzscorer = function () {
         for( var p=0 ; p < 8 ; p++) {
             $tr.append('<td class="score">0</td>');
         }
-        $tr.append( $('<td class="delete"><button data-action="delete-round" class="btn btn-xs btn-link"><span class="glyphicon glyphicon-trash"></span></button></td>') );
+        $tr.append( $('<td class="delete"><div><button data-action="delete-round" class="btn btn-xs btn-link"><span class="glyphicon glyphicon-trash"></span></button></div></td>') );
 
         $("#rounds").append($tr);
 

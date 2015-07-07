@@ -2,8 +2,12 @@
 <widget xmlns="http://www.w3.org/ns/widgets"
         xmlns:cdv="http://cordova.apache.org/ns/1.0"
         xmlns:gap = "http://phonegap.com/ns/1.0"
+
         id="com.blitzscorer"
-        version="3.0.2">
+        ios-CFBundleIdentifier="com.blitzscorer.ios"
+        android-packageName="com.blitzscorer"
+
+        version="3.0.4">
 
     <preference name='phonegap-version' value='cli-5.1.1' />
 
@@ -16,7 +20,6 @@
     </author>
 
     <content src="index.html" />
-
 
     <preference name="fullscreen"                 value="false" />           <!-- all: hides the status bar at the top of the screen -->
     <preference name="Orientation"                value="default" />
