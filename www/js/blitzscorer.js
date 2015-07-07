@@ -30,7 +30,7 @@ var blitzscorer = function () {
         }
 
         navigator.notification.confirm(
-            'All scores will be deleted.ddddd  Continue?',  // message
+            'All scores will be deleted.  Continue?',  // message
             onConfirm,                  // callback to invoke
             'Reset Scoreboard',            // title
             ['Yes', 'Cancel']             // buttonLabels
