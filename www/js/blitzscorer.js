@@ -219,7 +219,7 @@ var blitzscorer = function () {
             console.log($(this).text(), $(this).width());
             m = Math.max(m, $(this).width());
         });
-        return Math.min(200, m);
+        return Math.min(120, m);
     }
     function getPlayerNames() {
         var names = Array();
