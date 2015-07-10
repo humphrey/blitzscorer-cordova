@@ -50,6 +50,15 @@ var blitzscorer = function () {
 
     });
 
+    $('a[data-action="reset-player-names"]').click(function() {
+
+        set_player_names([]);
+        $(this).parents('li').parents('.btn-group').removeClass('open');
+        save();
+        return false;
+
+    });
+
     function getPlayerCount() {
         return $("#players .active").index() + 1;
     }
@@ -112,9 +121,33 @@ var blitzscorer = function () {
 
     });
 
+    $('#players th.player').click(function() {
+
+        var $this = $(this),
+            playerNo = $this.index();
+
+        var onPrompt = function (r) {
+            if (r.buttonIndex == 1) {
+                $this.find('span').text(r.input1 || "Player " + playerNo);
+                save();
+            }
+        }
+
+
+        navigator.notification.prompt(
+            'Enter new name for Player ' + playerNo,  // message
+            onPrompt,                  // callback to invoke
+            'Player ' + playerNo,            // title
+            ['OK', 'Cancel'],             // buttonLabels
+            $this.find('span').text()
+        );
+
+        return false;
+
+    });
+
     function nextRound() {
         var i = $("#rounds tr").length + 1;
-        //console.log(i);
 
         var $tr = $('<tr>');
 
@@ -137,15 +170,12 @@ var blitzscorer = function () {
         var playerCount = getPlayerCount();
 
         for( var p=2 ; p < 10 ; p++) {
-            //console.log(p);
             var $scores = $("#rounds tr td.score:nth-child(" + p + ")");
             var runningTotal = 0;
             $scores.each(function() {
-                //console.log($(this), $(this).text());
                 runningTotal += parseInt($(this).text());
             });
             $('#totals .total:nth-child(' + p + ')').text(runningTotal);
-            //console.log(runningTotal);
 
             //$("#scoresheet tr").find('th,td').eq(p - 1).toggleClass('hide', p - 1 > playerCount);
             var col = p - 0;
@@ -164,6 +194,25 @@ var blitzscorer = function () {
         save();
     }
 
+    function getPlayerNames() {
+        var names = Array();
+        $('#players th.player span').each(function() {
+            names.push($(this).text());
+        });
+        return names;
+    }
+
+    function set_player_names(names) {
+        names = names || Array();
+        for (var i=0 ; i<8 ; i++) {
+            var name = 'Player ' + (i+1);
+            if (i < names.length) {
+                name = names[i] || name;
+            }
+            $('#players th.player').eq(i).find('span').text(name);
+        }
+    }
+
     function save() {
 
         var $rounds = $("#rounds");
@@ -171,9 +220,13 @@ var blitzscorer = function () {
         $rounds.find('.delete-confirm-msg').remove();
         localStorage.setItem("rounds", $rounds.html());
         localStorage.setItem("playercount", getPlayerCount());
+        localStorage.setItem("playernames", JSON.stringify(getPlayerNames()));
+
     }
 
     function load() {
+        var names = JSON.parse(localStorage.getItem("playernames") || "[]");
+        set_player_names(names);
 
         var rows = localStorage.getItem("rounds");
 

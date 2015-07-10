@@ -85,6 +85,9 @@ td.score {
   /*padding: 5px 10px;*/
 /*}*/
 
+#scoresheet thead th.player {
+  cursor: pointer;
+}
 #scoresheet thead th.rotate {
   /* Something you can count on */
   height: 90px;
