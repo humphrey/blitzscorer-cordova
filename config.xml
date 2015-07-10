@@ -7,13 +7,19 @@
         ios-CFBundleIdentifier="com.blitzscorer.ios"
         android-packageName="com.blitzscorer"
 
-        version="3.0.6">
+        version="3.0.8">
 
     <preference name='phonegap-version' value='cli-5.1.1' />
 
     <name>Blitz Scorer</name>
     <description>
-        Simple app to keep track of your own Dutch Blitz Score.
+        An unofficial scoring app for the Dutch Blitz card game.
+
+ - Up to 8 players.
+ - Record scores for each round.  Totals shown at bottom.
+ - Simple +1, +5, +10, and -1, -5, -10 buttons for adjusting score.
+
+Don't want to install the app? Use the fully functional web version at http://blitzscorer.com/
     </description>
     <author href="http://blitzscorer.com" email="hmurray@datalive.com.au">
         Humphrey Murray
@@ -38,7 +44,6 @@
     <!-- Screen Orientation (iOS) -->
     <plugin name="cordova-plugin-screen-orientation" />
     <gap:plugin name="net.yoik.cordova.plugins.screenorientation" version="1.3.1" />
-    <!--<gap:plugin name="cordova-plugin-screen-orientation" />-->
 
 
     <!-- Status Bar -->
@@ -75,22 +80,8 @@
     <icon src="icon.png" />
 
     <access origin="*" />
-    <!--<access />-->
 
-    <!--
-      If you do not want any permissions to be added to your app, add the
-      following tag to your config.xml; you will still have the INTERNET
-      permission on your app, which PhoneGap requires.
-    -->
     <preference name="permissions" value="none"/>
-
-
-    <!--<allow-intent href="http://*/*" />-->
-    <!--<allow-intent href="https://*/*" />-->
-    <!--<allow-intent href="tel:*" />-->
-    <!--<allow-intent href="sms:*" />-->
-    <!--<allow-intent href="mailto:*" />-->
-    <!--<allow-intent href="geo:*" />-->
 
     <platform name="android">
         <allow-intent href="market:*" />
@@ -119,7 +110,7 @@
     <platform name="ios">
         <allow-intent href="itms:*" />
         <allow-intent href="itms-apps:*" />
-        <!--<icon src="www/res/icon/ios/icon-404.png" />-->
+        <!--<icon src="www/res/icon/ios/master.png" />-->
         <icon src="www/res/icon/ios/icon-57.png"    width="57" height="57" />
         <icon src="www/res/icon/ios/icon-57@2x.png" width="114" height="114" />
         <icon src="www/res/icon/ios/icon-60.png"    width="60" height="60" />
