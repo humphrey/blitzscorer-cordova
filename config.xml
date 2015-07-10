@@ -7,7 +7,7 @@
         ios-CFBundleIdentifier="com.blitzscorer.ios"
         android-packageName="com.blitzscorer"
 
-        version="3.0.5">
+        version="3.0.6">
 
     <preference name='phonegap-version' value='cli-5.1.1' />
 
@@ -43,9 +43,12 @@
 
     <!-- Status Bar -->
     <plugin name="cordova-plugin-statusbar" />
-    <gap:plugin name="com.phonegap.plugin.statusbar" version="1.1.0" />
+    <gap:plugin name="org.apache.cordova.statusbar" />
     <preference name="StatusBarOverlaysWebView" value="false" />
     <preference name="StatusBarBackgroundColor" value="#32692d" />
+    <feature name="StatusBar">
+        <param name="ios-package" value="CDVStatusBar" onload="true" />
+    </feature>
 
     <!-- No Splashscreen -->
     <preference name="BackgroundColor" value="0xffffffff"/>                  <!--  Set the app's background color. Supports a four-byte hex value, with the first byte representing the alpha channel, and standard RGB values for the following three bytes.  -->
@@ -65,8 +68,9 @@
 
     <plugin name="cordova-plugin-whitelist" version="1" />
     <gap:plugin name="com.indigoway.cordova.whitelist.whitelistplugin" version="1.1.1" />
+
     <plugin name="cordova-plugin-dialogs" />
-    <!--<gap:plugin name="cordova-plugin-dialogs" />-->
+    <gap:plugin name="org.apache.cordova.dialogs" />
 
     <icon src="icon.png" />
 
