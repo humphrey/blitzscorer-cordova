@@ -55,6 +55,7 @@ var blitzscorer = function () {
         set_player_names([]);
         $(this).parents('li').parents('.btn-group').removeClass('open');
         save();
+        updateTotals();
         return false;
 
     });
@@ -131,6 +132,7 @@ var blitzscorer = function () {
                 $this.find('span').text(r.input1 || "Player " + playerNo);
                 save();
             }
+            updateTotals();
         }
 
 
@@ -191,9 +193,21 @@ var blitzscorer = function () {
             $tr.find('.round').text(i);
 
         });
+
+        $('#players th.rotate').css('height', (getMaxPlayerNameHeight() + 30) + 'px');
+
         save();
     }
 
+    function getMaxPlayerNameHeight() {
+
+        var m = 70;
+        $('#players th.player:not(.hide) span').each(function() {
+            console.log($(this).text(), $(this).width());
+            m = Math.max(m, $(this).width());
+        });
+        return Math.min(200, m);
+    }
     function getPlayerNames() {
         var names = Array();
         $('#players th.player span').each(function() {
