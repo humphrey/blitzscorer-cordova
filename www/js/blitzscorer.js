@@ -60,7 +60,7 @@ var blitzscorer = function () {
     });
 
     function getPlayerCount() {
-        return $("#players .active").index() + 1;
+        return ($("#players-dropdown .active").index() + 1) || 4;
     }
 
     $('#rounds').on('click', 'td.delete', function() {
