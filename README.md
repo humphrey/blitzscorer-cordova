@@ -8,8 +8,6 @@ An unofficial scoring app for the Dutch Blitz card game.
 
 Don't want to install the app? Use the fully functional web version at [blitzscorer.com](http://blitzscorer.com/).
 
-<iframe src="http://www.w3schools.com"></iframe>
-
 ## Purpose of this app
 The primary purpose I wrote this app is because I wanted to try and write a simple app that worked great on all platforms in Cordova.  And, a Dutch Blitz scoring app is something that I will use!  I was hoping to be able to use a single code base to publish to Android, iOS, OS X, Windows Desktop, and the web.  Firefox and Windows phones would be nice but not required.  I'm close, but [cordova-osx](https://github.com/apache/cordova-osx) doesn't appear to work.
 
