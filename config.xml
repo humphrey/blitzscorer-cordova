@@ -43,14 +43,9 @@
 
     <!-- Status Bar -->
     <plugin name="cordova-plugin-statusbar" />
-    <gap:plugin name="org.apache.cordova.statusbar" version="0.1.4" />
+    <gap:plugin name="com.phonegap.plugin.statusbar" version="1.1.0" />
     <preference name="StatusBarOverlaysWebView" value="false" />
-    <!--<preference name="StatusBarBackgroundColor" value="#777777" />-->
     <preference name="StatusBarBackgroundColor" value="#32692d" />
-    <!--<preference name="StatusBarStyle" value="lightcontent" />-->
-    <!--<feature name="StatusBar">-->
-        <!--<param name="ios-package" value="CDVStatusBar" onload="true" />-->
-    <!--</feature>-->
 
     <!-- No Splashscreen -->
     <preference name="BackgroundColor" value="0xffffffff"/>                  <!--  Set the app's background color. Supports a four-byte hex value, with the first byte representing the alpha channel, and standard RGB values for the following three bytes.  -->
