@@ -52,10 +52,23 @@ var blitzscorer = function () {
 
     $('a[data-action="reset-player-names"]').click(function() {
 
-        set_player_names([]);
+        var onConfirm = function (buttonIndex) {
+            if (buttonIndex == 1) {
+                set_player_names([]);
+                save();
+                updateTotals();
+            }
+        }
+
         $(this).parents('li').parents('.btn-group').removeClass('open');
-        save();
-        updateTotals();
+
+        navigator.notification.confirm(
+            'Names will be reset to Player 1, Player 2, etc.  Continue?',  // message
+            onConfirm,                  // callback to invoke
+            'Reset Player Names?',            // title
+            ['Yes', 'Cancel']             // buttonLabels
+        );
+
         return false;
 
     });
