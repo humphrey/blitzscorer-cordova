@@ -5,9 +5,9 @@
 
         id="com.blitzscorer"
         ios-CFBundleIdentifier="com.blitzscorer.ios"
-        android-packageName="com.blitzscorer"
+        android-packageName="com.blitzscorer.android"
 
-        version="4.0.0">
+        version="5.0.0">
 
     <preference name='phonegap-version' value='cli-5.1.1' />
 
