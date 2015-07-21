@@ -1,0 +1,15 @@
+.navbar-link-btn {
+    color: #157DFB !important;
+    font-family: 	"Helvetica Neue",​Helvetica,​sans-serif !important;
+}
+.navbar {
+    border-bottom-color: #bbb;
+    border-bottom-width: 0.5px;
+    box-shadow: none;
+    -webkit-box-shadow: none;
+}
+.navbar .btn-group.open .dropdown-toggle {
+    box-shadow: none;
+    -webkit-box-shadow: none;
+    color: #777 !important;
+}

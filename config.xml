@@ -51,6 +51,7 @@ Don't want to install the app? Use the fully functional web version at http://bl
     <plugin name="cordova-plugin-statusbar" />
     <preference name="StatusBarOverlaysWebView" value="false" />                <!-- StatusBarOverlaysWebView (boolean, defaults to true). On iOS 7, make the statusbar overlay or not overlay the WebView at startup. -->
     <!--<preference name="StatusBarBackgroundColor" value="#32692d" />-->
+    <!--<preference name="StatusBarStyle" value="default" />               &lt;!&ndash; StatusBarStyle (status bar style, defaults to lightcontent). On iOS 7, set the status bar style. Available options default, lightcontent, blacktranslucent, blackopaque. &ndash;&gt;-->
     <preference name="StatusBarStyle" value="default" />               <!-- StatusBarStyle (status bar style, defaults to lightcontent). On iOS 7, set the status bar style. Available options default, lightcontent, blacktranslucent, blackopaque. -->
     <preference name="StatusBarBackgroundColor" value="#ffffff" />
     <preference name="StatusBarColor" value="#000000" />
