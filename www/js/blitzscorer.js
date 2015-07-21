@@ -20,7 +20,7 @@ var blitzscorer = function () {
         return false;
 
     });
-    $('button[data-action="new-game"]').click(function() {
+    var newGame = function() {
 
         var onConfirm = function (buttonIndex) {
             if (buttonIndex == 1) {
@@ -38,12 +38,12 @@ var blitzscorer = function () {
 
         return false;
 
-    });
+    };
 
     $('a[data-action="change-player-count"]').click(function() {
 
         $('#playercount li').removeClass('active');
-        $(this).parents('li').addClass('active').parents('.btn-group').removeClass('open');
+        $(this).parent('li').addClass('active').parents('.open').removeClass('open');
         updateTotals();
         save();
         return false;
@@ -216,7 +216,6 @@ var blitzscorer = function () {
 
         var m = 70;
         $('#players th.player:not(.hide) span').each(function() {
-            console.log($(this).text(), $(this).width());
             m = Math.max(m, $(this).width());
         });
         return Math.min(120, m);
@@ -277,5 +276,10 @@ var blitzscorer = function () {
 
 
     load();
+
+    return {
+        newGame: newGame/*,
+        setNumberOfPlayers: setNumberOfPlayers*/
+    };
 
 }(jQuery);

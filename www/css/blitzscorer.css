@@ -115,3 +115,18 @@ html {
     -ms-touch-action: manipulation;
     touch-action: manipulation;
 }
+
+
+.navbar-link-btn {
+    display: inline-block;
+    line-height: 20px;
+    padding: 15px;
+}
+.navbar-link-btn:hover {
+    text-decoration: none;
+}
+@media (max-width: 768px) {
+    .navbar .col-lg-8 {
+            padding-right: 0;
+    }
+}

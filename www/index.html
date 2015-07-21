@@ -12,67 +12,69 @@
     <!-- Optional theme -->
     <link rel="stylesheet" href="css/bootstrap-3.3.5-dist/css/bootstrap-theme.min.css">
     <link rel="stylesheet" href="css/blitzscorer.css">
+    <!--<link rel="stylesheet" href="css/platform.css">-->
 </head>
 <body>
 
 <nav class="navbar navbar-default navbar-fixed-top">
-    <div class="container">
+    <div class="container-fluid">
         <div class="row" >
-            <div class="col-md-2"></div>
-            <div class="col-md-8">
+            <div class="col-lg-2"></div>
+            <div class="col-lg-8">
 
-                <div style="margin: 0; padding: 8px 0;">
+                <div class="clearfix pull-right" id="navbar-buttons">
 
-                    <div class="pull-right">
-
-                        <button data-action="new-game" class="btn btn-default btn-sm" style="margin-left: 5px;">
-                            <!--<span class="glyphicon glyphicon-repeat"></span>-->
-                            Reset
-                        </button>
+                    <!--<div class="pull-right">-->
 
 
-                        <!-- Single button -->
-                        <div class="btn-group pull-right" style="margin-left: 5px;" id="players-dropdown">
-                          <button type="button" class="btn btn-sm btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <div class="btn-group pull-right"id="players-dropdown">
+                        <a href="#" class="navbar-link navbar-link-btn dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                             <span class="glyphicon glyphicon-user"></span>
-                              <span class="caret"></span>
-                          </button>
-                          <ul class="dropdown-menu" id="playercount">
-                            <li><a href="#" data-value="1" class="playercount" data-action="change-player-count">1 Player</a></li>
-                            <li><a href="#" data-value="2" class="playercount" data-action="change-player-count">2 Players</a></li>
-                            <li><a href="#" data-value="3" class="playercount" data-action="change-player-count">3 Players</a></li>
+                            <span class="hidden-xs">Players</span>
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu" id="playercount">
+                            <li>               <a href="#" data-value="1" class="playercount" data-action="change-player-count">1 Player</a></li>
+                            <li>               <a href="#" data-value="2" class="playercount" data-action="change-player-count">2 Players</a></li>
+                            <li>               <a href="#" data-value="3" class="playercount" data-action="change-player-count">3 Players</a></li>
                             <li class="active"><a href="#" data-value="4" class="playercount" data-action="change-player-count">4 Players</a></li>
-                            <li><a href="#" data-value="5" class="playercount" data-action="change-player-count">5 Players</a></li>
-                            <li><a href="#" data-value="6" class="playercount" data-action="change-player-count">6 Players</a></li>
-                            <li><a href="#" data-value="7" class="playercount" data-action="change-player-count">7 Players</a></li>
-                            <li><a href="#" data-value="8" class="playercount" data-action="change-player-count">8 Players</a></li>
-                              <li class="divider"></li>
+                            <li>               <a href="#" data-value="5" class="playercount" data-action="change-player-count">5 Players</a></li>
+                            <li>               <a href="#" data-value="6" class="playercount" data-action="change-player-count">6 Players</a></li>
+                            <li>               <a href="#" data-value="7" class="playercount" data-action="change-player-count">7 Players</a></li>
+                            <li>               <a href="#" data-value="8" class="playercount" data-action="change-player-count">8 Players</a></li>
+                            <li class="divider"></li>
                             <li><a href="#" data-action="reset-player-names">Reset player names...</a></li>
-                          </ul>
-                        </div>
-
+                        </ul>
                     </div>
+                    <a class="navbar-link navbar-link-btn" href="#" onclick="blitzscorer.newGame(); return false;">
+                        <span class="glyphicon glyphicon-repeat"></span>
+                        <span class="hidden-xs">Reset</span>
+                    </a>
 
-                    <img src="img/icon128.png" class="pull-left" style="height:40px; margin: -5px 8px -5px -4px;"/>
-                    <div style="line-height: 30px; font-size: 26px; font-weight: 100; color: #ffef32; color: #326a2e; letter-spacing: 0.03em; overflow: hidden; white-space: nowrap">
+
+                </div>
+
+                <div style="line-height: 50px">
+                    <img src="img/icon128.png" class="pull-left" style="height:40px; margin: 5px 8px 5px -4px;"/>
+                    <div style="font-size: 22px; font-weight: 100; color: #ffef32; color: #326a2e; letter-spacing: 0.03em; overflow: hidden; white-space: nowrap">
                         Blitz Scorer
                     </div>
                 </div>
             </div>
 
         </div>
-        <div class="col-md-2"></div>
+        <div class="col-lg-2"></div>
     </div>
 </nav>
 
 <div style="height: 60px;"></div>
 
 
-<div class="container">
+<div class="container-fluid">
 
     <div class="row">
-        <div class="col-md-2"></div>
-        <div class="col-md-8">
+        <div class="col-lg-2"></div>
+        <div class="col-lg-8">
 
             <!-- Table -->
             <div id="scoresheet-wrap">
@@ -119,7 +121,7 @@
             <br/>
 
         </div>
-        <div class="col-md-2"></div>
+        <div class="col-lg-2"></div>
     </div>
 </div>
 
