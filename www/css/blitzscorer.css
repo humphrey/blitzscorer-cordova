@@ -56,8 +56,8 @@ td.score {
 @media (min-width: 768px) {
     /*.navbar-fixed-bottom {*/
     .btn[data-action="change-score"] {
-        padding: 10px 16px !important;
-        font-size: 18px;
+        padding: 15px 21px !important;
+        font-size: 20px;
         line-height: 1.3333333;
         border-radius: 6px;
     }

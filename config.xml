@@ -89,6 +89,8 @@ Don't want to install the app? Use the fully functional web version at http://bl
 
     <platform name="android">
         <allow-intent href="market:*" />
+
+        <preference name="StatusBarBackgroundColor" value="#32692d" />
         
         <icon src="www/res/icon/android/icon-36-ldpi.png"     density="ldpi" />
         <icon src="www/res/icon/android/icon-48-mdpi.png"     density="mdpi" />
