@@ -13,3 +13,5 @@
     -webkit-box-shadow: none;
     color: #777 !important;
 }
+#navbar-body-spacer { height: 52px !important; }
+.navbar-fixed-bottom { background: #eee !important; border-top: 0.5px solid #bbb !important; }
