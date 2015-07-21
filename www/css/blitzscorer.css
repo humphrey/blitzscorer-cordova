@@ -122,11 +122,21 @@ html {
     line-height: 20px;
     padding: 15px;
 }
-.navbar-link-btn:hover {
-    text-decoration: none;
+.navbar-link-btn {
+    text-decoration: none !important;
 }
-@media (max-width: 768px) {
+@media (max-width: 767px) {
     .navbar .col-lg-8 {
             padding-right: 0;
+    }
+    #playercount {
+        right: 10px;
+    }
+}
+@media (min-width: 768px) {
+    #rounds td,
+    #rounds th {
+        padding-top: 12px;
+        padding-bottom: 12px;
     }
 }

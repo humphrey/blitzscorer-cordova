@@ -12,7 +12,7 @@
     <!-- Optional theme -->
     <link rel="stylesheet" href="css/bootstrap-3.3.5-dist/css/bootstrap-theme.min.css">
     <link rel="stylesheet" href="css/blitzscorer.css">
-    <!--<link rel="stylesheet" href="css/platform.css">-->
+    <link rel="stylesheet" href="css/platform.css">
 </head>
 <body>
 
@@ -22,12 +22,12 @@
             <div class="col-lg-2"></div>
             <div class="col-lg-8">
 
-                <div class="clearfix pull-right" id="navbar-buttons">
+                <div class="pull-right" id="navbar-buttons">
 
                     <!--<div class="pull-right">-->
 
 
-                    <div class="btn-group pull-right"id="players-dropdown">
+                    <div class="btn-group pull-right" id="players-dropdown">
                         <a href="#" class="navbar-link navbar-link-btn dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                             <span class="glyphicon glyphicon-user"></span>
                             <span class="hidden-xs">Players</span>
@@ -46,7 +46,7 @@
                             <li><a href="#" data-action="reset-player-names">Reset player names...</a></li>
                         </ul>
                     </div>
-                    <a class="navbar-link navbar-link-btn" href="#" onclick="blitzscorer.newGame(); return false;">
+                    <a class="navbar-link pull-right navbar-link-btn" href="#" onclick="blitzscorer.newGame(); return false;">
                         <span class="glyphicon glyphicon-repeat"></span>
                         <span class="hidden-xs">Reset</span>
                     </a>
@@ -55,8 +55,8 @@
                 </div>
 
                 <div style="line-height: 50px">
-                    <img src="img/icon128.png" class="pull-left" style="height:40px; margin: 5px 8px 5px -4px;"/>
-                    <div style="font-size: 22px; font-weight: 100; color: #ffef32; color: #326a2e; letter-spacing: 0.03em; overflow: hidden; white-space: nowrap">
+                    <img src="img/icon128.png" class="pull-left" style="height:40px; margin: 5px 8px 5px -4px;" alt="logo"/>
+                    <div style="font-size: 24px; font-weight: 100; color: #ffef32; color: #326a2e; letter-spacing: 0.03em; overflow: hidden; white-space: nowrap">
                         Blitz Scorer
                     </div>
                 </div>
@@ -147,9 +147,10 @@
                 </div>
 
             </div>
+            <div class="col-md-2"></div>
 
         </div>
-        <div class="col-md-2"></div>
+
     </div>
 </nav>
 
