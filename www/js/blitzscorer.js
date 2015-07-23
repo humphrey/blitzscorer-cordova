@@ -207,7 +207,7 @@ var blitzscorer = function () {
 
         });
 
-        $('#players th.rotate').css('height', (getMaxPlayerNameHeight() + 30) + 'px');
+        $('#players th.rotate').css('height', (getMaxPlayerNameHeight() + 50) + 'px');
 
         save();
     }

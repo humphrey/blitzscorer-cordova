@@ -53,7 +53,7 @@ Don't want to install the app? Use the fully functional web version at http://bl
     <!--<preference name="StatusBarBackgroundColor" value="#32692d" />-->
     <!--<preference name="StatusBarStyle" value="default" />               &lt;!&ndash; StatusBarStyle (status bar style, defaults to lightcontent). On iOS 7, set the status bar style. Available options default, lightcontent, blacktranslucent, blackopaque. &ndash;&gt;-->
     <preference name="StatusBarStyle" value="default" />               <!-- StatusBarStyle (status bar style, defaults to lightcontent). On iOS 7, set the status bar style. Available options default, lightcontent, blacktranslucent, blackopaque. -->
-    <preference name="StatusBarBackgroundColor" value="#ffffff" />
+    <!--<preference name="StatusBarBackgroundColor" value="#ffffff" />-->
     <preference name="StatusBarColor" value="#000000" />
     <feature name="StatusBar">
         <param name="ios-package" value="CDVStatusBar" onload="true" />
@@ -95,8 +95,8 @@ Don't want to install the app? Use the fully functional web version at http://bl
     <platform name="android">
         <allow-intent href="market:*" />
 
-        <preference name="StatusBarBackgroundColor" value="#32692d" />
-        
+        <preference name="StatusBarBackgroundColor" value="#2e4b21" />
+
         <icon src="www/res/icon/android/icon-36-ldpi.png"     density="ldpi" />
         <icon src="www/res/icon/android/icon-48-mdpi.png"     density="mdpi" />
         <icon src="www/res/icon/android/icon-72-hdpi.png"     density="hdpi" />
@@ -121,6 +121,9 @@ Don't want to install the app? Use the fully functional web version at http://bl
     <platform name="ios">
         <allow-intent href="itms:*" />
         <allow-intent href="itms-apps:*" />
+
+        <preference name="StatusBarBackgroundColor" value="#ffffff" />
+
         <!--<icon src="www/res/icon/ios/master.png" />-->
         <icon src="www/res/icon/ios/icon-57.png"    width="57" height="57" />
         <icon src="www/res/icon/ios/icon-57@2x.png" width="114" height="114" />
@@ -158,4 +161,6 @@ Don't want to install the app? Use the fully functional web version at http://bl
         <icon src="www/res/icon/firefoxos/icon128x128.png" width="128" height="128" />
         <!--<icon src="www/res/icon/firefoxos/icon512x512.png" width="512" height="512" />-->
      </platform>
+
+
 </widget>
