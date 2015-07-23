@@ -7,13 +7,17 @@
         ios-CFBundleIdentifier="com.blitzscorer.ios"
         android-packageName="com.blitzscorer.android"
 
-        version="5.0.0">
+        version="5.1.0">
 
     <preference name='phonegap-version' value='cli-5.1.1' />
 
-    <name>Blitz Scorer</name>
-    <description>
-        An unofficial scoring app for the Dutch Blitz card game.
+    <name>Blitz Scorer (Old Version)</name>
+    <description>THIS IS AN OLD VERSION OF THE APP AND WILL NO LONGER CONTINUE TO RECEIVE UPDATES!
+We are encouraging users to install the new version and uninstall this version.  However, feel free to keep using this edition if you want.
+
+--
+
+An unofficial scoring app for the Dutch Blitz card game.
 
  - Up to 8 players.
  - Record scores for each round.  Totals shown at bottom.
