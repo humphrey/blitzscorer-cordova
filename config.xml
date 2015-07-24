@@ -27,7 +27,6 @@ Don't want to install the app? Use the fully functional web version at http://bl
 
     <content src="index.html" />
 
-    <preference name="fullscreen"                 value="false" />           <!-- all: hides the status bar at the top of the screen -->
     <preference name="Orientation"                value="default" />
 
     <!--<preference name="ios-statusbarstyle"         value="black-opaque" />   &lt;!&ndash; ios: black-translucent will appear black because the PhoneGap webview doesn't go beneath the status bar &ndash;&gt;-->
@@ -96,6 +95,7 @@ Don't want to install the app? Use the fully functional web version at http://bl
         <allow-intent href="market:*" />
 
         <preference name="StatusBarBackgroundColor" value="#2e4b21" />
+        <preference name="fullscreen"                 value="false" />           <!-- all: hides the status bar at the top of the screen -->
 
         <icon src="res/icon/android/icon-96-xhdpi.png" />
         <icon src="res/icon/android/icon-36-ldpi.png"     density="ldpi" />
@@ -125,6 +125,7 @@ Don't want to install the app? Use the fully functional web version at http://bl
         <allow-intent href="itms-apps:*" />
 
         <preference name="StatusBarBackgroundColor" value="#ffffff" />
+        <preference name="fullscreen"                 value="false" />           <!-- all: hides the status bar at the top of the screen -->
 
         <!--<icon src="www/res/icon/ios/master.png" />-->
         <icon src="www/res/icon/ios/icon-57.png"    width="57" height="57" />
@@ -157,6 +158,9 @@ Don't want to install the app? Use the fully functional web version at http://bl
 
     </platform>
     <platform name="firefoxos">
+        <preference name="fullscreen"                 value="" />           <!-- all: hides the status bar at the top of the screen -->
+
+
         <icon src="res/icon/firefoxos/icon16x16.png" width="16" height="16" />
         <icon src="res/icon/firefoxos/icon48x48.png" width="48" height="48" />
         <icon src="res/icon/firefoxos/icon60x60.png" width="60" height="60" />
