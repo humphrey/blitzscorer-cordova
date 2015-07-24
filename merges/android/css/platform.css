@@ -1,3 +1,7 @@
+.visible-android {
+    display: block !important;
+}
+
 .navbar-link-btn {
     color: #fff !important;
     font-family: 'Roboto', Sans-Serif;

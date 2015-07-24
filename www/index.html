@@ -27,6 +27,18 @@
                     <!--<div class="pull-right">-->
 
 
+                    <div class="btn-group pull-right">
+                        <a href="#" class="navbar-link navbar-link-btn dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                            <span class="glyphicon glyphicon-option-vertical"></span>
+                            <!--<span class="hidden-xs">Menu</span>-->
+                            <!--<span class="caret hidden-xs"></span>-->
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#helpModal" data-toggle="modal"><span class="glyphicon glyphicon-question-sign small"></span>&nbsp; Getting started...</a></li>
+                            <li class="divider visible-android"></li>
+                            <li class="visible-android"><a href="market://details?id=com.blitzscorer.android"><span class="glyphicon glyphicon-thumbs-up small"></span>&nbsp; Rate app in Play Store</a></li>
+                        </ul>
+                    </div>
                     <div class="btn-group pull-right" id="players-dropdown">
                         <a href="#" class="navbar-link navbar-link-btn dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                             <span class="glyphicon glyphicon-user"></span>
@@ -164,6 +176,58 @@
 
     </div>
 </nav>
+
+<!-- Modal -->
+<div class="modal fade" id="helpModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Getting Started</h4>
+      </div>
+      <div class="modal-body">
+
+          <p class="lead">Blitz Scorer is a simple app for keeping score.  It was originally designed for the popular game, Dutch Blitz.
+              However, it can used to score any game that scores in rounds such as, 500, Hearts, etc.</p>
+
+          <p>
+            <b>To enter a score</b>, tap the cell you wish to change, then adjust the score by tapping a combination of the
+            <button class="btn btn-primary btn-xs" disabled="disabled">+</button> /
+            <button class="btn btn-primary btn-xs" disabled="disabled">-</button>
+            buttons at the bottom of the screen.
+              </p>
+          <p>
+            For example, to enter a score of <code>6</code>, press <button class="btn btn-primary btn-xs" disabled="disabled">+1</button> then <button class="btn btn-primary btn-xs" disabled="disabled">+5</button>
+          </p>
+
+            <p>
+                <b>Change a players name</b> by tapping the name of the player to change.
+</p><p>
+                <b>Start a new round</b> by tapping the <button class="btn btn-success btn-xs" disabled="disabled"><span class="glyphicon glyphicon-plus"></span> Add Round</button> button.
+</p><p>
+                <b>Start a new game</b> by tapping the <span class="glyphicon glyphicon-repeat"></span> Reset button.
+</p><p>
+                <b>Select the number of players</b> by using the <span class="glyphicon glyphicon-user"></span> Players menu.
+            </p>
+<hr/>
+          <p>Blitz Scorer is also available on the web, Android, iOS, Windows&nbsp;Phone, FirefoxOS, Chrome&nbsp;App.
+            <!--<a target="_blank" href="http://blitzscorer.com/">the web</a>,-->
+            <!--<a target="_blank" href="https://play.google.com/store/apps/details?id=com.blitzscorer.android">Android</a>,-->
+            <!--<a target="_blank" href="https://itunes.apple.com/us/app/blitz-scorer/id1016406103?ls=1&mt=8">iOS</a>,-->
+            <!--<a target="_blank" href="https://www.windowsphone.com/en-au/store/app/blitz-scorer/cf4c70eb-63a1-4eea-a98d-de101e57542d">Windows&nbsp;Phone</a>,-->
+            <!--<a target="_blank" href="https://marketplace.firefox.com/app/blitzscorer/">FirefoxOS</a>,-->
+            <!--<a target="_blank" href="https://chrome.google.com/webstore/detail/blitz-scorer/ihdhajnfhcngffceogmhmbmkmhlanmab">Chrome&nbsp;App</a>-->
+
+          </p>
+
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-default pull-left visible-android" href="market://details?id=com.blitzscorer.android"><span class="glyphicon glyphicon-thumbs-up small"></span> Rate App in Play Store</a>
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 <!-- Cordova JavaScript -->
 <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
