@@ -37,6 +37,7 @@
                             <li><a href="#helpModal" data-toggle="modal"><span class="glyphicon glyphicon-question-sign small"></span>&nbsp; Getting started...</a></li>
                             <li class="divider visible-android"></li>
                             <li class="visible-android"><a href="market://details?id=com.blitzscorer.android"><span class="glyphicon glyphicon-thumbs-up small"></span>&nbsp; Rate app in Play Store</a></li>
+                            <li class="visible-firefoxos"><a onclick="window.open('https://marketplace.firefox.com/app/blitzscorer/ratings/add'); return false;" href="#"><span class="glyphicon glyphicon-thumbs-up small"></span>&nbsp; Rate app in Marketplace</a></li>
                         </ul>
                     </div>
                     <div class="btn-group pull-right" id="players-dropdown">
@@ -222,7 +223,8 @@
 
       </div>
       <div class="modal-footer">
-        <a class="btn btn-default pull-left visible-android" href="market://details?id=com.blitzscorer.android"><span class="glyphicon glyphicon-thumbs-up small"></span> Rate App in Play Store</a>
+        <a class="btn btn-default btn-sm pull-left visible-android" href="market://details?id=com.blitzscorer.android"><span class="glyphicon glyphicon-thumbs-up small"></span> Rate App in Play Store</a>
+        <a class="btn btn-default btn-sm pull-left visible-firefoxos" href="#"  onclick="window.open('https://marketplace.firefox.com/app/blitzscorer/ratings/add'); return false;"><span class="glyphicon glyphicon-thumbs-up small"></span> Rate App in Marketplace</a>
         <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
       </div>
     </div>

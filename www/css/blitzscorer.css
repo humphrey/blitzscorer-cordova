@@ -152,6 +152,7 @@ html {
     white-space: nowrap
 }
 
-.visible-android {
+.visible-android,
+.visible-firefoxos {
     display: none;
 }
