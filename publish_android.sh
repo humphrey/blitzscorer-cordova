@@ -1,0 +1,1 @@
+venv/bin/python bin/google-play/upload_apks_with_listing.py com.blitzscorer.android platforms/android/build/outputs/apk/android-release.apk

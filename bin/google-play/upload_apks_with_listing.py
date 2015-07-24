@@ -22,7 +22,7 @@ import os
 from apiclient import sample_tools
 from oauth2client import client
 
-TRACK = 'production'  # Can be 'alpha', beta', 'production' or 'rollout'
+TRACK = 'alpha'  # Can be 'alpha', beta', 'production' or 'rollout'
 
 # Declare command-line flags.
 argparser = argparse.ArgumentParser(add_help=False)
