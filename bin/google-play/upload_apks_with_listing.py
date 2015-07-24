@@ -22,7 +22,7 @@ import os
 from apiclient import sample_tools
 from oauth2client import client
 
-TRACK = 'alpha'  # Can be 'alpha', beta', 'production' or 'rollout'
+TRACK = 'production'  # Can be 'alpha', beta', 'production' or 'rollout'
 
 # Declare command-line flags.
 argparser = argparse.ArgumentParser(add_help=False)
@@ -77,7 +77,7 @@ def main(argv):
         track_response['track'], str(track_response['versionCodes']))
 
     listing_response = service.edits().apklistings().update(
-        editId=edit_id, packageName=package_name, language='en-US',
+        editId=edit_id, packageName=package_name, language='en-AU',
         apkVersionCode=apk_response['versionCode'],
         body={'recentChanges': get_recent_changes()}).execute()
 
