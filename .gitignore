@@ -1,6 +1,7 @@
 
-.platforms/
+
 .idea/workspace.xml
 bin/google-play/client_secrets.json
 venv
 androidpublisher.dat
+platforms
