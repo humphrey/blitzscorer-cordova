@@ -1,6 +1,50 @@
 var blitzscorer = function () {
 
 
+    var isFirefoxosDesktop = function () {
+
+        var ua = window.navigator.userAgent.toLowerCase();
+        if (window.cordova.platformId == 'firefoxos') {
+            var isDevice = (ua.indexOf('(mobile;') > 0 || ua.indexOf('(tablet;') > 0) && ua.indexOf('; rv:') > 0;
+            return !isDevice;
+        }
+        return false;
+
+    };
+
+    var blitzConfirm = function (message, callback, title, buttonLabels) {
+
+        if (isFirefoxosDesktop()) {
+            // Workaround for an Annoying bug where firefoxos dialog plugin doesn't work as a desktop os
+            if (window.confirm(message) == true) {
+                callback(1);
+            }
+            else {
+                callback(0);
+            }
+        }
+        else {
+            navigator.notification.confirm(message, callback, title, buttonLabels);
+        }
+
+    };
+
+    var blitzPrompt = function (message, callback, title, buttonLabels, defaultText) {
+
+        if (isFirefoxosDesktop()) {
+            // Workaround for an Annoying bug where firefoxos dialog plugin doesn't work as a desktop os
+            var result = window.prompt(message, defaultText);
+            callback({
+                buttonIndex: result === null ? 0 : 1,
+                input1: result || ''
+            });
+        }
+        else {
+            navigator.notification.prompt(message, callback, title, buttonLabels, defaultText);
+        }
+
+    };
+
     $('button[data-action="next-round"]').click(function() {
 
         nextRound();
@@ -29,7 +73,8 @@ var blitzscorer = function () {
             }
         }
 
-        navigator.notification.confirm(
+        //navigator.notification.confirm(
+        blitzConfirm(
             'All scores will be deleted.  Continue?',  // message
             onConfirm,                  // callback to invoke
             'Reset Scoreboard',            // title
@@ -62,7 +107,8 @@ var blitzscorer = function () {
 
         $(this).parents('li').parents('.btn-group').removeClass('open');
 
-        navigator.notification.confirm(
+        //navigator.notification.confirm(
+        blitzConfirm(
             'Names will be reset to Player 1, Player 2, etc.  Continue?',  // message
             onConfirm,                  // callback to invoke
             'Reset Player Names?',            // title
@@ -149,7 +195,8 @@ var blitzscorer = function () {
         }
 
 
-        navigator.notification.prompt(
+        //navigator.notification.prompt(
+        blitzPrompt(
             'Enter new name for Player ' + playerNo,  // message
             onPrompt,                  // callback to invoke
             'Player ' + playerNo,            // title
@@ -273,7 +320,6 @@ var blitzscorer = function () {
         $('#rounds td.score.selected').click();
 
     }
-
 
     load();
 

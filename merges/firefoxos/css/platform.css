@@ -1,3 +1,7 @@
 .visible-firefoxos {
     display: block !important;
 }
+.navbar-app-title {
+    font-size: 22px;
+    letter-spacing: 0;
+}

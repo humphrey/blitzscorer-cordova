@@ -157,10 +157,10 @@ Don't want to install the app? Use the fully functional web version at http://bl
 
     </platform>
     <platform name="firefoxos">
-        <icon src="www/res/icon/firefoxos/icon16x16.png" width="16" height="16" />
-        <icon src="www/res/icon/firefoxos/icon48x48.png" width="48" height="48" />
-        <icon src="www/res/icon/firefoxos/icon60x60.png" width="60" height="60" />
-        <icon src="www/res/icon/firefoxos/icon128x128.png" width="128" height="128" />
+        <icon src="res/icon/firefoxos/icon16x16.png" width="16" height="16" />
+        <icon src="res/icon/firefoxos/icon48x48.png" width="48" height="48" />
+        <icon src="res/icon/firefoxos/icon60x60.png" width="60" height="60" />
+        <icon src="res/icon/firefoxos/icon128x128.png" width="128" height="128" />
         <!--<icon src="www/res/icon/firefoxos/icon512x512.png" width="512" height="512" />-->
      </platform>
 
