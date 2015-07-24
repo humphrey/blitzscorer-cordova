@@ -16,6 +16,9 @@
     padding: 8px 10px 8px 2px;
     text-align: center;
 }
+#rounds tr td.delete div {
+    position: relative;
+}
 #rounds tr {
     cursor: pointer;
 }

@@ -148,9 +148,9 @@ var blitzscorer = function () {
 
             $this.addClass('btn-danger').removeClass('btn-link');
 
-            var $msg = $('<span class="label label-danger delete-confirm-msg" style="position: absolute; top: -9px; right: 4px;">Tap again to delete</span>');
+            var $msg = $('<span class="label label-danger delete-confirm-msg" style="position: absolute; top: -16px; right: 0px;">Tap again to delete</span>');
 
-            $this.parents('td').append($msg);
+            $this.parent().append($msg);
 
             setTimeout(function() {
                 $msg.fadeOut('fast', function() {
