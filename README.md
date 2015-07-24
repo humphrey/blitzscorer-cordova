@@ -25,3 +25,8 @@ So far, the app has been published on a number of different stores.  Links to li
  
 ## Using this code
 Go for it!  I'm not bothered what anybody uses this code for.  How do you use it?  Well, check out the Cordova Doc's.  The project is pretty stanard.
+
+## Notes
+Need to use github version of cordova-firefoxos... npm version doesn't create valid zip files
+
+    cordova platform add https://github.com/apache/cordova-firefoxos.git@3.7.0
