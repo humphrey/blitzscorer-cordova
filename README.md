@@ -1,4 +1,4 @@
-# blitzscorer-phonegap
+# blitzscorer-phonegap #
 
 An unofficial scoring app for the Dutch Blitz card game.
 
@@ -10,10 +10,10 @@ Don't want to install the app? Use the fully functional web version at [blitzsco
 
 ![Screenshot of Blitz Scorer](stores/screenshots/Screen Shot 2015-06-19 at 12.33.05.png)
 
-## Purpose of this app
+## Purpose of this app ##
 The primary purpose I wrote this app is because I wanted to try and write a simple app that worked great on all platforms in Cordova.  And, a Dutch Blitz scoring app is something that I will use!  I was hoping to be able to use a single code base to publish to Android, iOS, OS X, Windows Desktop, and the web.  Firefox and Windows phones would be nice but not required.  I'm close, but [cordova-osx](https://github.com/apache/cordova-osx) doesn't appear to work.
 
-## Get the app!
+## Get the app! ##
 So far, the app has been published on a number of different stores.  Links to listings:
 
  - [Webapp](http://blitzscorer.com/) Any modern browser / platform.
@@ -23,10 +23,11 @@ So far, the app has been published on a number of different stores.  Links to li
  - [Firefox Marketplace](https://marketplace.firefox.com/app/blitzscorer/) (Waiting for review) FirefoxOS, Mac + Windows + Windows Desktop, & Android (Requires Firefox Installed)
  - [Chrome Web Store](https://chrome.google.com/webstore/detail/blitz-scorer/ihdhajnfhcngffceogmhmbmkmhlanmab) - ChromeOS, Windows + Mac desktops.
  
-## Using this code
+## Using this code ##
 Go for it!  I'm not bothered what anybody uses this code for.  How do you use it?  Well, check out the Cordova Doc's.  The project is pretty stanard.
 
-## Notes
+## Notes ##
 Need to use github version of cordova-firefoxos... npm version doesn't create valid zip files
 
     cordova platform add https://github.com/apache/cordova-firefoxos.git@3.7.0
+
