@@ -1,4 +1,4 @@
-# blitzscorer-phonegap #
+# blitzscorer-cordova #
 
 An unofficial scoring app for the Dutch Blitz card game.
 
