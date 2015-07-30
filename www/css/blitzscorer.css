@@ -13,11 +13,8 @@
 }
 #rounds tr td.delete {
     position: relative;
-    padding: 8px 10px 8px 2px;
+    padding: 8px 2px;
     text-align: center;
-}
-#rounds tr td.delete div {
-    position: relative;
 }
 #rounds tr {
     cursor: pointer;
@@ -26,7 +23,6 @@ td.score.selected {
     background: #d9edf7 !important;
     font-weight: bold;
 }
-
 
 #scoresheet-wrap { margin: 0 -15px; }
 #scoresheet th,
@@ -56,18 +52,6 @@ td.score {
     border: 1px solid #ddd;
 }
 
-@media (min-width: 768px) {
-    /*.navbar-fixed-bottom {*/
-    .btn[data-action="change-score"] {
-        padding: 15px 21px !important;
-        font-size: 20px;
-        line-height: 1.3333333;
-        border-radius: 6px;
-    }
-
-    /*}*/
-}
-
 
 
 /*th.player {*/
@@ -89,9 +73,6 @@ td.score {
   /*padding: 5px 10px;*/
 /*}*/
 
-#scoresheet thead th.player {
-  cursor: pointer;
-}
 #scoresheet thead th.rotate {
   /* Something you can count on */
   height: 90px;
@@ -101,61 +82,15 @@ td.score {
 }
 
 #scoresheet thead th.rotate > div {
-  -ms-transform: translate(0px, 2px) rotate(270deg);
-  -webkit-transform: translate(0px, 2px) rotate(270deg);
-  transform: translate(0px, 2px) rotate(270deg);
+  transform:
+    /* Magic Numbers */
+    translate(0px, 2px)
+    /* 45 is really 360 - 45 */
+    /*rotate(315deg);*/
+    rotate(270deg);
   width: 8px;
 }
 #scoresheet thead th.rotate > div > span {
   /*border-bottom: 1px solid #ccc;*/
   /*padding: 5px 10px;*/
-}
-
-
-
-/* http://stackoverflow.com/a/21062165 */
-html {
-    -ms-touch-action: manipulation;
-    touch-action: manipulation;
-}
-
-
-.navbar-link-btn {
-    display: inline-block;
-    line-height: 20px;
-    padding: 15px;
-}
-.navbar-link-btn {
-    text-decoration: none !important;
-}
-@media (max-width: 767px) {
-    .navbar .col-lg-8 {
-            padding-right: 0;
-    }
-    #playercount {
-        right: 10px;
-    }
-}
-@media (min-width: 768px) {
-    #rounds td,
-    #rounds th {
-        padding-top: 12px;
-        padding-bottom: 12px;
-    }
-}
-
-
-.navbar-app-title {
-    font-size: 24px;
-    font-weight: 100;
-    color: #ffef32;
-    color: #326a2e;
-    letter-spacing: 0.03em;
-    overflow: hidden;
-    white-space: nowrap
-}
-
-.visible-android,
-.visible-firefoxos {
-    display: none;
 }

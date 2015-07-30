@@ -1,0 +1,18 @@
+{
+  "manifest_version": 2,
+  "name": "Blitz Scorer",
+  "version": "2.0",
+  "minimum_chrome_version": "23",
+  "icons": {
+    "16": "icon_16.png",
+    "128": "icon_128.png"
+  },
+  "app": {
+    "background": {
+      "scripts": ["main.js"]
+    }
+  },
+  "permissions": [
+    "storage"
+  ]
+}

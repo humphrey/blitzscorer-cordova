@@ -1,50 +1,6 @@
 var blitzscorer = function () {
 
 
-    var isFirefoxosDesktop = function () {
-
-        var ua = window.navigator.userAgent.toLowerCase();
-        if (window.cordova.platformId == 'firefoxos') {
-            var isDevice = (ua.indexOf('(mobile;') > 0 || ua.indexOf('(tablet;') > 0) && ua.indexOf('; rv:') > 0;
-            return !isDevice;
-        }
-        return false;
-
-    };
-
-    var blitzConfirm = function (message, callback, title, buttonLabels) {
-
-        if (isFirefoxosDesktop()) {
-            // Workaround for an Annoying bug where firefoxos dialog plugin doesn't work as a desktop os
-            if (window.confirm(message) == true) {
-                callback(1);
-            }
-            else {
-                callback(0);
-            }
-        }
-        else {
-            navigator.notification.confirm(message, callback, title, buttonLabels);
-        }
-
-    };
-
-    var blitzPrompt = function (message, callback, title, buttonLabels, defaultText) {
-
-        if (isFirefoxosDesktop()) {
-            // Workaround for an Annoying bug where firefoxos dialog plugin doesn't work as a desktop os
-            var result = window.prompt(message, defaultText);
-            callback({
-                buttonIndex: result === null ? 0 : 1,
-                input1: result || ''
-            });
-        }
-        else {
-            navigator.notification.prompt(message, callback, title, buttonLabels, defaultText);
-        }
-
-    };
-
     $('button[data-action="next-round"]').click(function() {
 
         nextRound();
@@ -64,68 +20,34 @@ var blitzscorer = function () {
         return false;
 
     });
-    var newGame = function() {
 
-        var onConfirm = function (buttonIndex) {
-            if (buttonIndex == 1) {
-                $("#rounds").html("");
-                nextRound();
-            }
+    $('button[data-action="new-game"]').click(function() {
+
+        if (window.chrome !== undefined || confirm("All scores will be deleted.  Continue?")) {
+            $("#rounds").html("");
+            nextRound();
         }
-
-        //navigator.notification.confirm(
-        blitzConfirm(
-            'All scores will be deleted.  Continue?',  // message
-            onConfirm,                  // callback to invoke
-            'Reset Scoreboard',            // title
-            ['Yes', 'Cancel']             // buttonLabels
-        );
-
         return false;
 
-    };
+    });
 
     $('a[data-action="change-player-count"]').click(function() {
 
         $('#playercount li').removeClass('active');
-        $(this).parent('li').addClass('active').parents('.open').removeClass('open');
+        $(this).parents('li').addClass('active').parents('.btn-group').removeClass('open');
         updateTotals();
         save();
         return false;
 
     });
 
-    $('a[data-action="reset-player-names"]').click(function() {
-
-        var onConfirm = function (buttonIndex) {
-            if (buttonIndex == 1) {
-                set_player_names([]);
-                save();
-                updateTotals();
-            }
-        }
-
-        $(this).parents('li').parents('.btn-group').removeClass('open');
-
-        //navigator.notification.confirm(
-        blitzConfirm(
-            'Names will be reset to Player 1, Player 2, etc.  Continue?',  // message
-            onConfirm,                  // callback to invoke
-            'Reset Player Names?',            // title
-            ['Yes', 'Cancel']             // buttonLabels
-        );
-
-        return false;
-
-    });
-
     function getPlayerCount() {
-        return ($("#players-dropdown .active").index() + 1) || 4;
+        return $("#players .active").index() + 1;
     }
 
-    $('#rounds').on('click', 'td.delete', function() {
+    $('#rounds').on('click', 'button[data-action="delete-round"]', function() {
 
-        var $this = $(this).find('button');
+        var $this = $(this);
         if ($this.hasClass('btn-danger')) {
 
             var $tr = $this.parents('tr');
@@ -148,9 +70,9 @@ var blitzscorer = function () {
 
             $this.addClass('btn-danger').removeClass('btn-link');
 
-            var $msg = $('<span class="label label-danger delete-confirm-msg" style="position: absolute; top: -16px; right: 0px;">Tap again to delete</span>');
+            var $msg = $('<span class="label label-danger delete-confirm-msg" style="position: absolute; top: -9px; right: 4px;">Tap again to delete</span>');
 
-            $this.parent().append($msg);
+            $this.parents('td').append($msg);
 
             setTimeout(function() {
                 $msg.fadeOut('fast', function() {
@@ -181,35 +103,9 @@ var blitzscorer = function () {
 
     });
 
-    $('#players th.player').click(function() {
-
-        var $this = $(this),
-            playerNo = $this.index();
-
-        var onPrompt = function (r) {
-            if (r.buttonIndex == 1) {
-                $this.find('span').text(r.input1 || "Player " + playerNo);
-                save();
-            }
-            updateTotals();
-        }
-
-
-        //navigator.notification.prompt(
-        blitzPrompt(
-            'Enter new name for Player ' + playerNo,  // message
-            onPrompt,                  // callback to invoke
-            'Player ' + playerNo,            // title
-            ['OK', 'Cancel'],             // buttonLabels
-            $this.find('span').text()
-        );
-
-        return false;
-
-    });
-
     function nextRound() {
         var i = $("#rounds tr").length + 1;
+        //console.log(i);
 
         var $tr = $('<tr>');
 
@@ -217,7 +113,7 @@ var blitzscorer = function () {
         for( var p=0 ; p < 8 ; p++) {
             $tr.append('<td class="score">0</td>');
         }
-        $tr.append( $('<td class="delete"><div><button data-action="delete-round" class="btn btn-xs btn-link"><span class="glyphicon glyphicon-trash"></span></button></div></td>') );
+        $tr.append( $('<td class="delete"><button data-action="delete-round" class="btn btn-xs btn-link"><span class="glyphicon glyphicon-trash"></span></button></td>') );
 
         $("#rounds").append($tr);
 
@@ -232,12 +128,15 @@ var blitzscorer = function () {
         var playerCount = getPlayerCount();
 
         for( var p=2 ; p < 10 ; p++) {
+            //console.log(p);
             var $scores = $("#rounds tr td.score:nth-child(" + p + ")");
             var runningTotal = 0;
             $scores.each(function() {
+                //console.log($(this), $(this).text());
                 runningTotal += parseInt($(this).text());
             });
             $('#totals .total:nth-child(' + p + ')').text(runningTotal);
+            //console.log(runningTotal);
 
             //$("#scoresheet tr").find('th,td').eq(p - 1).toggleClass('hide', p - 1 > playerCount);
             var col = p - 0;
@@ -253,37 +152,7 @@ var blitzscorer = function () {
             $tr.find('.round').text(i);
 
         });
-
-        $('#players th.rotate').css('height', (getMaxPlayerNameHeight() + 50) + 'px');
-
         save();
-    }
-
-    function getMaxPlayerNameHeight() {
-
-        var m = 70;
-        $('#players th.player:not(.hide) span').each(function() {
-            m = Math.max(m, $(this).width());
-        });
-        return Math.min(120, m);
-    }
-    function getPlayerNames() {
-        var names = Array();
-        $('#players th.player span').each(function() {
-            names.push($(this).text());
-        });
-        return names;
-    }
-
-    function set_player_names(names) {
-        names = names || Array();
-        for (var i=0 ; i<8 ; i++) {
-            var name = 'Player ' + (i+1);
-            if (i < names.length) {
-                name = names[i] || name;
-            }
-            $('#players th.player').eq(i).find('span').text(name);
-        }
     }
 
     function save() {
@@ -291,41 +160,70 @@ var blitzscorer = function () {
         var $rounds = $("#rounds");
         $rounds.find('.delete button').removeClass('btn-danger');
         $rounds.find('.delete-confirm-msg').remove();
-        localStorage.setItem("rounds", $rounds.html());
-        localStorage.setItem("playercount", getPlayerCount());
-        localStorage.setItem("playernames", JSON.stringify(getPlayerNames()));
-
+        ourLocalStorage("rounds", $rounds.html());
+        ourLocalStorage("playercount", getPlayerCount());
     }
 
     function load() {
-        var names = JSON.parse(localStorage.getItem("playernames") || "[]");
-        set_player_names(names);
 
-        var rows = localStorage.getItem("rounds");
+        ourLocalStorage("rounds", undefined, function(data) {
 
-        if (rows == null || rows == 'undefined' || rows == undefined) {
-            $("#rounds").html("");
-            nextRound();
-        }
-        else {
-            $("#rounds").html(rows);
-        }
+            var rows = data.rounds;
+            if (rows == null) {
+                $("#rounds").html("");
+                nextRound();
+            }
+            else {
+                $("#rounds").html(rows);
+            }
 
-        var playerCount = localStorage.getItem("playercount");
+            updateTotals();
+            $('#rounds td.score.selected').click();
 
-        $('a[data-action="change-player-count"][data-value="' + playerCount + '"]').click();
+        });
 
-        updateTotals();
+        ourLocalStorage("playercount", undefined, function(data) {
 
-        $('#rounds td.score.selected').click();
+            var playerCount = data.playercount;
+            $('a[data-action="change-player-count"][data-value="' + playerCount + '"]').click();
+
+            updateTotals();
+            $('#rounds td.score.selected').click();
+
+        });
+
 
     }
 
-    load();
+    function ourLocalStorage(key, value, callback) {
 
-    return {
-        newGame: newGame/*,
-        setNumberOfPlayers: setNumberOfPlayers*/
-    };
+        if (document.localStorage !== undefined) {
+
+            if (value == undefined) {
+                var val = document.localStorage.getItem(key);
+                return callback({key: val});
+            }
+            else {
+                document.localStorage.setItem(key, value);
+            }
+
+        }
+        else if (window.chrome !== undefined && chrome.storage !== undefined && chrome.storage.local !== undefined) {
+
+            if (value == undefined) {
+                return chrome.storage.local.get(key, function(data) {
+                    callback(data);
+                });
+            }
+            else {
+                chrome.storage.local.set({key: value});
+            }
+
+        }
+
+    }
+
+
+    load();
 
 }(jQuery);
