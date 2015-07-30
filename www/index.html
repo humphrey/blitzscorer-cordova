@@ -59,7 +59,7 @@
                             <li><a href="#" data-action="reset-player-names">Reset player names...</a></li>
                         </ul>
                     </div>
-                    <a class="navbar-link pull-right navbar-link-btn" href="#" onclick="blitzscorer.newGame(); return false;">
+                    <a class="navbar-link pull-right navbar-link-btn" href="#" data-action="new-game">
                         <span class="glyphicon glyphicon-repeat"></span>
                         <span class="hidden-xs">Reset</span>
                     </a>
@@ -238,16 +238,13 @@
 <!-- Latest compiled and minified JavaScript -->
 <script src="js/jquery-2.1.4/jquery-2.1.4.min.js"></script>
 <script src="js/bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
+<script src="js/storage.js"></script>
 <script src="js/blitzscorer.js"></script>
 
 <!-- https://github.com/ftlabs/fastclick -->
 <!-- http://labs.ft.com/articles/ft-fastclick/ -->
 <script src='js/jquery.fastclick-2015-7-3.js'></script>
-<script>
-    $(function() {
-        FastClick.attach(document.body);
-    });
-</script>
+<script src='js/blitzscorer-fastclick.js'></script>
 
 </body>
 </html>

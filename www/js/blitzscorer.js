@@ -4,7 +4,11 @@ var blitzscorer = function () {
     var isFirefoxosDesktop = function () {
 
         var ua = window.navigator.userAgent.toLowerCase();
-        if (window.cordova.platformId == 'firefoxos') {
+        var platformId = '';
+        if (window.cordova !== undefined) {
+            platformId = window.cordova.platformId || '';
+        }
+        if (platformId == 'firefoxos') {
             var isDevice = (ua.indexOf('(mobile;') > 0 || ua.indexOf('(tablet;') > 0) && ua.indexOf('; rv:') > 0;
             return !isDevice;
         }
@@ -23,8 +27,11 @@ var blitzscorer = function () {
                 callback(0);
             }
         }
-        else {
+        else if (window.navigator !== undefined && window.navigator.notification !== undefined) {
             navigator.notification.confirm(message, callback, title, buttonLabels);
+        }
+        else {
+            callback(1);
         }
 
     };
@@ -84,6 +91,15 @@ var blitzscorer = function () {
         return false;
 
     };
+
+
+    $('a[data-action="new-game"]').click(function() {
+
+        newGame();
+        return false;
+
+    });
+
 
     $('a[data-action="change-player-count"]').click(function() {
 
@@ -291,33 +307,40 @@ var blitzscorer = function () {
         var $rounds = $("#rounds");
         $rounds.find('.delete button').removeClass('btn-danger');
         $rounds.find('.delete-confirm-msg').remove();
-        localStorage.setItem("rounds", $rounds.html());
-        localStorage.setItem("playercount", getPlayerCount());
-        localStorage.setItem("playernames", JSON.stringify(getPlayerNames()));
+        storageBackend.setItem("rounds", $rounds.html());
+        storageBackend.setItem("playercount", getPlayerCount());
+        storageBackend.setItem("playernames", JSON.stringify(getPlayerNames()));
 
     }
 
     function load() {
-        var names = JSON.parse(localStorage.getItem("playernames") || "[]");
-        set_player_names(names);
+        storageBackend.getItem(["playernames", "rounds", "playercount"], function(data) {
 
-        var rows = localStorage.getItem("rounds");
+            console.log('Load:', data);
 
-        if (rows == null || rows == 'undefined' || rows == undefined) {
-            $("#rounds").html("");
-            nextRound();
-        }
-        else {
-            $("#rounds").html(rows);
-        }
+            var names = JSON.parse(data["playernames"] || "[]");
+            set_player_names(names);
 
-        var playerCount = localStorage.getItem("playercount");
+            var rows = data["rounds"];
 
-        $('a[data-action="change-player-count"][data-value="' + playerCount + '"]').click();
+            if (rows == null || rows == 'undefined' || rows == undefined) {
+                $("#rounds").html("");
+                nextRound();
+            }
+            else {
+                $("#rounds").html(rows);
+            }
 
-        updateTotals();
+            var playerCount = data["playercount"];
 
-        $('#rounds td.score.selected').click();
+            $('a[data-action="change-player-count"][data-value="' + playerCount + '"]').click();
+
+            updateTotals();
+
+            $('#rounds td.score.selected').click();
+
+        });
+
 
     }
 
